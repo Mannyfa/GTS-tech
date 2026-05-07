@@ -1,7 +1,7 @@
 // src/pages/Booking.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import Footer from '../components/layout/Footer';
+import Footer from '../components/layout/footer.jsx';
 
 const Booking = () => {
   const revealVariants = {

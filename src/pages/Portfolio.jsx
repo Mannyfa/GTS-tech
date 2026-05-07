@@ -1,9 +1,9 @@
 // src/pages/Portfolio.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import Footer from '../components/layout/Footer';
+import Footer from '../components/layout/footer.jsx';
 
-// Dummy data for the Project Grid
+
 const projects = [
   {
     id: 1,

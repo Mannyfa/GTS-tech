@@ -1,7 +1,7 @@
 // src/pages/About.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import Footer from '../components/layout/Footer';
+import Footer from '../components/layout/footer.jsx';
 
 import blessingImg from '../assets/images/BlesRaph.jpg';
 import kimberlyImg from '../assets/images/KimNuo.jpg';

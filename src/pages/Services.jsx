@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import Footer from '../components/layout/Footer';
+import Footer from '../components/layout/footer.jsx';
 
-// Extracted from the Signature Offers Document
+
 const serviceKits = [
   {
     id: 'positioning',
