@@ -4,104 +4,118 @@ import { motion } from 'framer-motion';
 import Footer from '../components/layout/Footer';
 
 const Booking = () => {
+  const revealVariants = {
+    hidden: { y: "100%" },
+    visible: { y: 0, transition: { duration: 1, ease: [0.33, 1, 0.68, 1] } }
+  };
+
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
   return (
-    <div className="min-h-screen bg-softGray font-secondary text-midnight">
+    <div className="min-h-screen bg-softGray font-secondary text-midnight overflow-hidden selection:bg-electric selection:text-white">
       
-      {/* 1. Headline & Hero Section */}
-      <section className="pt-40 pb-20 px-6 lg:px-24 bg-midnight text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="font-primary text-4xl md:text-6xl font-bold mb-6"
+      {/* 1. Hero Section */}
+      <section className="pt-48 pb-20 px-6 lg:px-24 bg-midnight text-white relative">
+        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-noise mix-blend-overlay"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-end justify-between gap-10">
+          <div className="md:w-2/3">
+            <h2 className="font-primary text-xs tracking-[0.3em] text-steelGold uppercase mb-6 block">Consultation</h2>
+            <div className="overflow-hidden mb-6">
+              <motion.h1 
+                variants={revealVariants} initial="hidden" animate="visible"
+                className="font-primary text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none"
+              >
+                Claim Your <br/> <span className="text-electric italic font-light">Clarity.</span>
+              </motion.h1>
+            </div>
+          </div>
+          <motion.div 
+            variants={fadeUpVariants} initial="hidden" animate="visible" transition={{ delay: 0.3 }}
+            className="md:w-1/3"
           >
-            Claim Your <span className="text-electric">Clarity.</span>
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg text-softGray leading-editorial max-w-2xl mx-auto"
-          >
-            Schedule a 30-minute discovery call with our founding team to map out the digital architecture your brand needs to scale.
-          </motion.p>
+            <p className="text-lg text-gray-300 leading-editorial font-light">
+              Schedule a complimentary 30-minute discovery call to map out the digital architecture and brand positioning your business needs to scale.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-24 px-6 lg:px-24">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      {/* 2. Main Booking Architecture (Split Screen) */}
+      <section className="py-24 px-6 lg:px-24 relative">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
           
-          {/* Left Column: What to Expect & Testimonial */}
+          {/* LEFT COLUMN: Expectations & Trust */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col space-y-16"
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariants}
+            className="lg:w-5/12 flex flex-col space-y-16"
           >
-            {/* 3. What to Expect */}
+            {/* What to Expect */}
             <div>
-              <h2 className="font-primary text-2xl font-bold mb-8 text-midnight">What to Expect</h2>
-              <div className="space-y-8">
-                <div className="flex items-start space-x-4">
-                  <span className="font-primary text-teal font-bold text-xl">01</span>
+              <h3 className="font-primary text-2xl md:text-3xl font-bold mb-10 text-midnight">What happens next?</h3>
+              
+              <div className="space-y-10">
+                <div className="flex items-start gap-6 group">
+                  <span className="font-primary text-teal font-light text-2xl group-hover:scale-110 transition-transform">01</span>
                   <div>
-                    <h4 className="font-primary font-bold text-midnight mb-2">Vision Alignment</h4>
-                    <p className="text-sm text-gray-600 leading-editorial">We'll discuss your current bottlenecks, brand positioning, and where you want to take your business in the next 12 months.</p>
+                    <h4 className="font-primary font-bold text-midnight mb-2 text-lg">Vision Alignment</h4>
+                    <p className="text-sm text-gray-600 leading-editorial font-light">We will discuss your current bottlenecks, brand positioning, and where you want to take your business in the next 12 months.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <span className="font-primary text-teal font-bold text-xl">02</span>
+                
+                <div className="flex items-start gap-6 group">
+                  <span className="font-primary text-teal font-light text-2xl group-hover:scale-110 transition-transform">02</span>
                   <div>
-                    <h4 className="font-primary font-bold text-midnight mb-2">System Audit</h4>
-                    <p className="text-sm text-gray-600 leading-editorial">A brief review of your existing digital infrastructure to identify gaps in your tech stack or user experience.</p>
+                    <h4 className="font-primary font-bold text-midnight mb-2 text-lg">System Audit</h4>
+                    <p className="text-sm text-gray-600 leading-editorial font-light">A brief, live review of your existing digital infrastructure to identify immediate gaps in your tech stack or user experience.</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <span className="font-primary text-teal font-bold text-xl">03</span>
+                
+                <div className="flex items-start gap-6 group">
+                  <span className="font-primary text-teal font-light text-2xl group-hover:scale-110 transition-transform">03</span>
                   <div>
-                    <h4 className="font-primary font-bold text-midnight mb-2">Strategic Roadmap</h4>
-                    <p className="text-sm text-gray-600 leading-editorial">You'll leave the call with actionable clarity on the exact service tier or custom system required for your transformation.</p>
+                    <h4 className="font-primary font-bold text-midnight mb-2 text-lg">Strategic Roadmap</h4>
+                    <p className="text-sm text-gray-600 leading-editorial font-light">You will leave the call with actionable clarity on the exact service tier or custom system required for your transformation.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* 4. Testimonial[cite: 1] */}
-            <div className="bg-white p-8 border-l-4 border-steelGold shadow-sm">
-              <p className="font-secondary italic text-gray-700 leading-editorial mb-6">
-                "GTS didn't just build us a website; they structured our entire digital workflow. The combination of high-end design and operational tech expertise is unmatched. We saw a 40% increase in qualified leads within the first quarter."
+            {/* Micro-Testimonial for Trust Injection */}
+            <div className="bg-white p-8 md:p-10 shadow-xl border border-gray-50 relative">
+              <div className="absolute top-0 left-0 w-1 h-full bg-steelGold"></div>
+              <p className="font-secondary italic text-gray-700 leading-editorial mb-6 text-sm">
+                "The clarity I got from just the initial consultation was worth its weight in gold. GTS doesn't just build websites; they architect your entire business flow."
               </p>
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-xs text-gray-400">
-                  [Img]
-                </div>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-[10px] text-gray-400">IMG</div>
                 <div>
-                  <h5 className="font-primary font-bold text-sm text-midnight">Sarah Jenkins</h5>
-                  <span className="text-xs text-gray-500 font-primary uppercase tracking-widest">Founder, Lumina Wealth</span>
+                  <h5 className="font-primary font-bold text-xs text-midnight">Sarah Jenkins</h5>
+                  <span className="text-[10px] text-gray-400 font-primary uppercase tracking-[0.2em]">Lumina Wealth</span>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column: 2. Scheduling Tool[cite: 1] */}
+          {/* RIGHT COLUMN: The Scheduling Tool */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="w-full h-full min-h-[600px] bg-white shadow-xl border border-gray-100 p-2 flex flex-col"
+            initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.4 }}
+            className="lg:w-7/12 w-full"
           >
-            {/* 
-              NOTE: In a production environment, you would embed a tool like Calendly or Acuity here using an iframe or their official React component.
-              Example: <iframe src="https://calendly.com/your-link" width="100%" height="100%" frameBorder="0"></iframe>
-            */}
-            <div className="flex-1 border-2 border-dashed border-gray-200 flex items-center justify-center flex-col text-center p-10">
-              <span className="text-4xl mb-4">📅</span>
-              <h3 className="font-primary text-xl font-bold text-midnight mb-2">Scheduling Tool Integration</h3>
-              <p className="text-gray-500 text-sm font-secondary">
-                Embed your Calendly, Acuity, or custom booking widget here. 
-              </p>
-            </div>
+            <div className="flex-1 w-full h-full min-h-[700px] rounded-sm overflow-hidden bg-white">
+  <iframe
+   
+    src="https://calendly.com/kelvmanuel67/book-a-meeting"
+    width="100%"
+    height="100%"
+    frameBorder="0"
+    title="Schedule Consultation"
+    className="w-full h-full"
+  ></iframe>
+</div>
           </motion.div>
 
         </div>

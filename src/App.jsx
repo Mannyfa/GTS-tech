@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Quiz from './pages/Quiz';
 
 // 1. Import the Navbar
 import Navbar from './components/layout/Navbar';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/quiz" element={<Quiz />} />
         </Routes>
       </div>
     </Router>

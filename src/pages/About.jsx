@@ -7,7 +7,6 @@ import blessingImg from '../assets/images/blesRaph.jpg';
 import kimberlyImg from '../assets/images/kimNuo.jpg';
 
 const About = () => {
- 
   const revealVariants = {
     hidden: { y: "100%" },
     visible: { 
@@ -92,7 +91,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* 3. NEW: Core Values - Minimalist Grid Array */}
+      {/* 3. Core Values - Minimalist Grid Array */}
       <section className="py-32 px-6 lg:px-24 bg-midnight text-white">
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -120,7 +119,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* 4. Meet the Founders - Editorial Overlap Layout */}
+      {/* 4. Meet the Founders - Editorial Overlap Layout (RESPONSIVE UPDATES APPLIED HERE) */}
       <section className="py-40 px-6 lg:px-24 bg-white">
         <div className="max-w-7xl mx-auto">
           
@@ -149,10 +148,10 @@ const About = () => {
               
               <motion.div 
                 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
-                className="w-full md:w-1/2 lg:w-2/5 bg-white p-10 lg:p-14 z-20 md:-ml-24 mt-[-60px] md:mt-auto shadow-2xl border border-gray-50 relative"
+                className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-1/2 lg:w-2/5 bg-white p-8 md:p-10 lg:p-14 z-20 mx-4 sm:mx-8 md:mx-0 md:-ml-24 mt-[-80px] md:mt-auto shadow-2xl border border-gray-50 relative self-center md:self-auto"
               >
                 <div className="w-12 h-[2px] bg-steelGold mb-6"></div>
-                <h3 className="font-primary text-3xl font-bold text-midnight">Blessing Raphael</h3>
+                <h3 className="font-primary text-2xl md:text-3xl font-bold text-midnight">Blessing Raphael</h3>
                 <p className="font-primary text-xs tracking-widest uppercase text-gray-400 mt-2 mb-6">COO / Project Manager</p>
                 <p className="text-gray-600 leading-editorial text-sm">
                   Driving operational excellence and project clarity, Blessing ensures that every digital transformation is delivered with precision, structure, and warmth. He acts as the bridge between ambitious vision and flawless execution.
@@ -175,10 +174,10 @@ const About = () => {
               
               <motion.div 
                 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
-                className="w-full md:w-1/2 lg:w-2/5 bg-midnight text-white p-10 lg:p-14 z-20 md:-mr-24 mt-[-60px] md:mt-auto shadow-2xl relative"
+                className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-1/2 lg:w-2/5 bg-midnight text-white p-8 md:p-10 lg:p-14 z-20 mx-4 sm:mx-8 md:mx-0 md:-mr-24 mt-[-80px] md:mt-auto shadow-2xl relative self-center md:self-auto"
               >
                 <div className="w-12 h-[2px] bg-electric mb-6"></div>
-                <h3 className="font-primary text-3xl font-bold text-steelGold">Kimberly Nuonum</h3>
+                <h3 className="font-primary text-2xl md:text-3xl font-bold text-steelGold">Kimberly Nuonum</h3>
                 <p className="font-primary text-xs tracking-widest uppercase text-softGray mt-2 mb-6">Founder / Leadership</p>
                 <p className="text-gray-300 leading-editorial text-sm">
                   Leading the creative and technological vision, Kimberly engineers the high-end aesthetic and robust digital infrastructure that defines the GTS standard. Her focus is on systems that breathe and designs that command attention.
