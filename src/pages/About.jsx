@@ -3,8 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/layout/Footer';
 
-import blessingImg from '../assets/images/blesRaph.jpg';
-import kimberlyImg from '../assets/images/kimNuo.jpg';
+import blessingImg from '../assets/images/BlesRaph.jpg';
+import kimberlyImg from '../assets/images/KimNuo.jpg';
 
 const About = () => {
   const revealVariants = {

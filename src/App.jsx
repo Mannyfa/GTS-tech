@@ -7,11 +7,11 @@ import Quiz from './pages/Quiz';
 import Navbar from './components/layout/Navbar';
 
 // 2. Import all the completed pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import Booking from './pages/Booking';
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Services from './pages/Services.jsx';
+import Portfolio from './pages/Portfolio.jsx';
+import Booking from './pages/Booking.jsx';
 
 function App() {
   return (

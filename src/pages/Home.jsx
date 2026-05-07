@@ -1,9 +1,9 @@
 // src/pages/Home.jsx
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Hero from '../components/layout/Hero';
-import footer from '../components/layout/footer';
-import LeadCaptureModal from '../features/LeadCaptureModal';
+import Hero from '../components/layout/Hero.jsx';
+import footer from '../components/layout/footer.jsx';
+import LeadCaptureModal from '../features/LeadCaptureModal.jsx';
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
