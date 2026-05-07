@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Hero from '../components/layout/Hero';
-import Footer from '../components/layout/footer';
+import footer from '../components/layout/footer';
 import LeadCaptureModal from '../features/LeadCaptureModal';
 
 const Home = () => {
@@ -177,7 +177,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer />
+      <footer />
     </div>
   );
 };
