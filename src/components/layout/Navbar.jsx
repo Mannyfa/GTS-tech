@@ -1,6 +1,7 @@
 // src/components/layout/Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImg from '../../assets/images/logo.png'; 
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,14 +28,13 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-midnight py-4 shadow-lg' : 'bg-midnight/95 py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-24 flex justify-between items-center">
         
-        {/* Logo Section */}
-        <Link to="/" className="flex items-center space-x-3 group">
-          <span className="font-primary font-bold text-2xl tracking-widest text-steelGold group-hover:scale-105 transition-transform">
-            G<span className="text-electric">T</span><span className="text-teal">S</span>
-          </span>
-          <span className="font-primary font-medium tracking-widest text-white hidden sm:block text-sm uppercase">
-            Grand Tech Solutions
-          </span>
+        {/* Logo Section - Oversized with Negative Margins */}
+        <Link to="/" className="flex items-center group cursor-pointer shrink-0">
+          <img 
+            src={logoImg} 
+            alt="Grand Tech Solutions Logo" 
+            className="h-12 md:h-16 lg:h-20 w-auto object-contain -my-4 lg:-my-6 group-hover:scale-105 transition-transform duration-300"
+          />
         </Link>
 
         {/* Desktop Navigation */}

@@ -1,12 +1,41 @@
 // src/pages/About.jsx
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import Footer from '../components/layout/footer.jsx';
 
 import blessingImg from '../assets/images/BlesRaph.jpg';
 import kimberlyImg from '../assets/images/KimNuo.jpg';
 
 const About = () => {
+  // --- Form State Management ---
+  const formRef = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // Replace these with your actual EmailJS IDs
+    const serviceID = 'YOUR_SERVICE_ID';
+    const templateID = 'YOUR_TEMPLATE_ID';
+    const publicKey = 'YOUR_PUBLIC_KEY';
+
+    emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
+      .then((result) => {
+          console.log('Success:', result.text);
+          setSubmitStatus('success');
+          setIsSubmitting(false);
+          formRef.current.reset(); // Clear the form
+      }, (error) => {
+          console.error('Failed:', error.text);
+          setSubmitStatus('error');
+          setIsSubmitting(false);
+      });
+  };
+
   const revealVariants = {
     hidden: { y: "100%" },
     visible: { 
@@ -224,17 +253,45 @@ const About = () => {
             {/* Subtle interactive border effect */}
             <div className="absolute top-0 left-0 w-full h-[2px] bg-transparent group-focus-within:bg-electric transition-colors duration-500"></div>
             
-            <form className="space-y-8 relative z-10">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <input type="text" placeholder="First Name" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent transition-colors" required />
-                <input type="text" placeholder="Last Name" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent transition-colors" required />
-              </div>
-              <input type="email" placeholder="Email Address" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent transition-colors" required />
-              <textarea placeholder="Tell us about your project..." rows="4" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent resize-none transition-colors" required></textarea>
-              <button type="submit" className="bg-midnight text-white font-primary px-8 py-4 uppercase tracking-widest text-xs hover:bg-electric transition-colors w-full md:w-auto">
-                Submit Inquiry
-              </button>
-            </form>
+            {submitStatus === 'success' ? (
+               <motion.div 
+                 initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} 
+                 className="h-full flex flex-col items-center justify-center text-center py-12"
+               >
+                 <div className="w-16 h-16 bg-teal/10 rounded-full flex items-center justify-center mb-6">
+                    <span className="text-teal text-2xl">✓</span>
+                 </div>
+                 <h3 className="font-primary text-2xl font-bold text-midnight mb-2">Inquiry Received.</h3>
+                 <p className="text-gray-600 font-light text-sm">Thank you for reaching out. A member of the GTS team will review your project details and contact you shortly.</p>
+                 <button 
+                    onClick={() => setSubmitStatus(null)}
+                    className="mt-8 text-xs font-primary uppercase tracking-widest text-electric hover:text-midnight transition-colors"
+                 >
+                   Send Another Message
+                 </button>
+               </motion.div>
+            ) : (
+              <form ref={formRef} onSubmit={handleFormSubmit} className="space-y-8 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <input type="text" name="from_name" placeholder="First Name" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent transition-colors" required />
+                  <input type="text" name="last_name" placeholder="Last Name" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent transition-colors" required />
+                </div>
+                <input type="email" name="reply_to" placeholder="Email Address" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent transition-colors" required />
+                <textarea name="message" placeholder="Tell us about your project..." rows="4" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric bg-transparent resize-none transition-colors" required></textarea>
+                
+                {submitStatus === 'error' && (
+                  <p className="text-red-500 text-xs font-primary tracking-wide">Something went wrong. Please try again or email us directly.</p>
+                )}
+
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className={`bg-midnight text-white font-primary px-8 py-4 uppercase tracking-widest text-xs hover:bg-electric transition-colors w-full md:w-auto ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
+                </button>
+              </form>
+            )}
           </div>
 
         </div>
