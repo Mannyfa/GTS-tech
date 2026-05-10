@@ -29,9 +29,9 @@ const Footer = () => {
         {/* Text-Based Social & Contact Links */}
         <div className="flex flex-col space-y-4 font-primary text-sm tracking-widest uppercase text-right">
           <a href="mailto:support@grandtech-solutions.com" className="hover:text-steelGold transition-colors duration-300">Email Us</a>
-          <a href="#" className="hover:text-steelGold transition-colors duration-300">Instagram</a>
-          <a href="#" className="hover:text-steelGold transition-colors duration-300">LinkedIn</a>
-          <a href="#" className="hover:text-steelGold transition-colors duration-300">Twitter</a>
+          <a href="https://www.instagram.com/grandtechsolutions" className="hover:text-steelGold transition-colors duration-300">Instagram</a>
+          <a href="https://www.linkedin.com/in/grandtech-solutions-2655193bb?utm_source=share_via&utm_content=profile&utm_medium=member_ios" className="hover:text-steelGold transition-colors duration-300">LinkedIn</a>
+          <a href="https://www.facebook.com/grandtechsolutions" className="hover:text-steelGold transition-colors duration-300">Facebook</a>
         </div>
       </div>
     </footer>

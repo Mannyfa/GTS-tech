@@ -181,9 +181,11 @@ const About = () => {
               >
                 <div className="w-12 h-[2px] bg-steelGold mb-6"></div>
                 <h3 className="font-primary text-2xl md:text-3xl font-bold text-midnight">Blessing Raphael</h3>
-                <p className="font-primary text-xs tracking-widest uppercase text-gray-400 mt-2 mb-6">COO / Project Manager</p>
+                <p className="font-primary text-xs tracking-widest uppercase text-gray-400 mt-2 mb-6">COO / Founder</p>
                 <p className="text-gray-600 leading-editorial text-sm">
-                  Driving operational excellence and project clarity, Blessing ensures that every digital transformation is delivered with precision, structure, and warmth. He acts as the bridge between ambitious vision and flawless execution.
+                  A visionary creative-tech leader with a passion for building businesses, shaping brands, and designing scalable systems that empower growth.
+Blessing blends creativity, strategy, and operational excellence to help companies transform their digital presence and unlock their full potential.
+Her work is driven by clarity, innovation, and a deep commitment to excellence - crafting solutions that are not only beautiful, but built to last.
                 </p>
               </motion.div>
             </div>
@@ -207,9 +209,12 @@ const About = () => {
               >
                 <div className="w-12 h-[2px] bg-electric mb-6"></div>
                 <h3 className="font-primary text-2xl md:text-3xl font-bold text-steelGold">Kimberly Nuonum</h3>
-                <p className="font-primary text-xs tracking-widest uppercase text-softGray mt-2 mb-6">Founder / Leadership</p>
+                <p className="font-primary text-xs tracking-widest uppercase text-softGray mt-2 mb-6">Co-Founder / CEO</p>
                 <p className="text-gray-300 leading-editorial text-sm">
-                  Leading the creative and technological vision, Kimberly engineers the high-end aesthetic and robust digital infrastructure that defines the GTS standard. Her focus is on systems that breathe and designs that command attention.
+                  Kimberly O. Nuonum is a global business strategist and digital transformation leader with over two decades of experience delivering scalable digital marketing, supply chain and technology solutions.
+Working closely with C-suite executives and leadership teams, she translates vision into structured strategies that strengthen digital presence, operational efficiency, and long-term growth.
+With experience across domestic and international markets, Kimberly brings a global perspective to innovation and business development.
+As Co-Founder and CEO of GTS, she leads the company’s strategic direction, building a globally focused digital and AI solutions studio designed to help businesses scale with clarity and confidence.
                 </p>
               </motion.div>
             </div>
