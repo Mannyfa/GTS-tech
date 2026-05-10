@@ -1,22 +1,22 @@
-// src/pages/Home.jsx
+
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Hero from '../components/layout/Hero.jsx';
-import footer from '../components/layout/footer.jsx';
+import Footer from '../components/layout/footer.jsx'; 
 import LeadCaptureModal from '../features/LeadCaptureModal.jsx';
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const resultsRef = useRef(null);
 
-  // Parallax for the Testimonial Box
+  
   const { scrollYProgress: resultsScroll } = useScroll({
     target: resultsRef,
     offset: ["start end", "end start"]
   });
   const testimonialY = useTransform(resultsScroll, [0, 1], ["20%", "-20%"]);
 
-  // Luxury easing curve
+  
   const customEase = [0.33, 1, 0.68, 1];
 
   const revealText = {
@@ -56,15 +56,17 @@ const Home = () => {
       </section>
 
       {/* 2. Why GTS - Sticky Scroll Architecture */}
-      <section className="py-32 md:py-48 px-6 lg:px-24 bg-white relative overflow-hidden">
+      
+      <section className="py-32 md:py-48 px-6 lg:px-24 bg-white relative">
         
-        {/* NEW: Premium Grainy Noise Overlay */}
+        
         <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none bg-noise mix-blend-multiply"></div>
         
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-16 lg:gap-24 relative z-10">
           
           {/* Left Side: Sticky Header */}
-          <div className="lg:sticky lg:top-40 lg:w-1/3 z-10">
+          {/* FIX: Added self-start and h-fit to constrain the container height */}
+          <div className="lg:sticky lg:top-40 lg:w-1/3 z-10 self-start h-fit">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 1 }}>
               <h2 className="font-primary text-xs tracking-[0.3em] text-teal uppercase mb-4">The GTS Advantage</h2>
               <h3 className="font-primary text-4xl md:text-6xl font-bold text-midnight leading-tight">
@@ -124,7 +126,7 @@ const Home = () => {
 
       
       {/* 3. Client Results - Parallax Overlap */}
-      <section ref={resultsRef} className="py-32 md:py-48 px-6 lg:px-24 bg-midnight text-white relative flex flex-col justify-center">
+      <section ref={resultsRef} className="py-32 md:py-48 px-6 lg:px-24 bg-midnight text-white relative flex flex-col justify-center overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative w-full">
           
           {/* Left: Metrics */}
@@ -177,7 +179,7 @@ const Home = () => {
         </div>
       </section>
 
-      <footer />
+      <Footer />
     </div>
   );
 };

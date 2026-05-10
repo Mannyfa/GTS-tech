@@ -108,7 +108,7 @@ const Booking = () => {
             <div className="flex-1 w-full h-full min-h-[700px] rounded-sm overflow-hidden bg-white">
   <iframe
    
-    src="https://calendly.com/kelvmanuel67/book-a-meeting"
+    src="https://calendly.com/kim-grandtech-solutions/30min"
     width="100%"
     height="100%"
     frameBorder="0"
