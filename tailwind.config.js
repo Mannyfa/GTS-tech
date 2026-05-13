@@ -8,18 +8,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        midnight: '#0A1F3F',   // Primary background, headers, nav, footer
-        electric: '#1E90FF',   // CTAs, buttons, hover states
-        teal: '#2EC4B6',       // Accent elements, icons, dividers
-        softGray: '#F0F0F0',   // Background sections, cards
-        steelGold: '#C8A951',  // Luxury accent, logo highlights[cite: 1]
+        
+        midnight: '#191970',       
+        midnightLight: '#191970',  
+        acadia: '#4e3612',
+        
+        electric: '#0066FF',       
+        electricGlow: '#4D94FF',   
+        cyan: '#00E5FF',           
+        teal: '#00F0B5',          
+        steelGold: '#D4AF37',      
+        softGray: '#F0F0F0',       
+      },
+      backgroundImage: {
+        
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'electric-gradient': 'linear-gradient(135deg, #0066FF 0%, #00E5FF 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F3E5AB 100%)',
       },
       fontFamily: {
-        primary: ['Montserrat', 'sans-serif'], // Headlines, nav, buttons[cite: 1]
-        secondary: ['Poppins', 'sans-serif'],  // Body text, descriptions[cite: 1]
+        primary: ['"Playfair Display"', 'serif'],
+        secondary: ['"Inter"', 'sans-serif'],
       },
       lineHeight: {
-        'editorial': '1.7', // Generous line spacing for body text (1.6-1.8)[cite: 1]
+        'editorial': '1.7', // Generous line spacing for body text
       }
     },
   },

@@ -122,7 +122,7 @@ const Quiz = () => {
                     className={`text-left p-6 border transition-all duration-300 font-light text-lg md:text-xl
                       ${selectedOption === idx 
                         ? 'border-electric bg-electric/10 text-white' 
-                        : 'border-white/20 text-gray-300 hover:border-white/50 hover:bg-white/5'
+                        : 'border-white/20 text-gray-300 hover:border-white/50 hover:bg-midnight/5'
                       }`}
                   >
                     {option.text}
@@ -135,7 +135,7 @@ const Quiz = () => {
                 {selectedOption !== null && (
                   <motion.div 
                     initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
-                    className="bg-white/5 border border-white/10 p-6 mb-8"
+                    className="bg-midnight/5 border border-white/10 p-6 mb-8"
                   >
                     <p className="text-steelGold font-primary text-xs tracking-widest uppercase mb-2">GTS Insight</p>
                     <p className="text-sm md:text-base leading-editorial text-gray-300 font-light mb-2">
@@ -154,7 +154,7 @@ const Quiz = () => {
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                     <button 
                       onClick={handleNext}
-                      className="bg-electric text-white font-primary px-10 py-5 tracking-widest uppercase text-sm hover:bg-white hover:text-midnight transition-colors duration-500 w-full md:w-auto"
+                      className="bg-electric text-white font-primary px-10 py-5 tracking-widest uppercase text-sm hover:bg-midnight hover:text-white transition-colors duration-500 w-full md:w-auto"
                     >
                       {currentStep === quizQuestions.length - 1 ? 'See Results' : 'Next Question'}
                     </button>
@@ -169,18 +169,18 @@ const Quiz = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-center max-w-2xl bg-white p-12 md:p-20 shadow-2xl"
+              className="text-center max-w-2xl bg-midnight p-12 md:p-20 shadow-2xl border border-gray-800"
             >
               <h2 className="font-primary text-sm tracking-[0.2em] text-teal uppercase mb-4">Diagnosis Complete</h2>
-              <h3 className="font-primary text-3xl md:text-5xl font-bold text-midnight mb-6">
+              <h3 className="font-primary text-3xl md:text-5xl font-bold text-white mb-6">
                 Ready to strengthen your brand and systems?
               </h3>
-              <p className="font-secondary text-gray-600 leading-editorial mb-10 font-light">
+              <p className="font-secondary text-gray-300 leading-editorial mb-10 font-light">
                 Based on your answers, your business is primed for a digital upgrade. Let’s build the structural foundation and high-end aesthetic your vision truly deserves.
               </p>
               <Link 
                 to="/booking"
-                className="inline-block bg-midnight text-white font-primary px-10 py-5 tracking-widest uppercase text-sm hover:bg-electric transition-colors duration-500 w-full"
+                className="inline-block bg-electric text-white font-primary px-10 py-5 tracking-widest uppercase text-sm hover:bg-midnight hover:text-white transition-colors duration-500 w-full"
               >
                 Book Your Free Clarity Call
               </Link>

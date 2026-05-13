@@ -39,7 +39,7 @@ const Hero = ({ onOpenModal }) => {
       />
       
       {/* Cinematic Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight/85 to-midnight z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to to-midnight z-10"></div>
       
       {/* Hero Content */}
       <motion.div 
@@ -51,13 +51,13 @@ const Hero = ({ onOpenModal }) => {
             initial="hidden" animate="visible" variants={revealVariants}
             className="font-primary text-5xl md:text-7xl font-bold leading-tight"
           >
-            Build Systems That <span className="text-electric italic font-light">Shape the Future.</span>
+           <span className="text-[#191970]">Build Systems That</span>  <span className="text-electric italic font-light">Shape the Future.</span>
           </motion.h1>
         </div>
         
         <motion.p 
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-          className="text-lg md:text-xl text-softGray mb-10 leading-editorial max-w-2xl font-light"
+          className="text-lg md:text-xl text-[#191970] mb-10 leading-editorial max-w-2xl font-light"
         >
           We are a boutique hybrid tech and creative studio designing premium digital transformations for visionary founders.
         </motion.p>
@@ -66,12 +66,12 @@ const Hero = ({ onOpenModal }) => {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
         >
-          <button className="bg-electric text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-white hover:text-midnight transition-colors duration-500">
+          <button className="bg-electric text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-midnight hover:text-white transition-colors duration-500">
             Schedule Discovery
           </button>
           <button 
             onClick={onOpenModal}
-            className="border border-teal text-teal font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-teal hover:text-midnight transition-colors duration-500"
+            className="border border-teal text-teal font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-teal hover:text-white transition-colors duration-500"
           >
             Free Strategy Report
           </button>

@@ -22,16 +22,16 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-white p-10 rounded-sm max-w-md w-full relative z-10 shadow-2xl"
+            className="bg-midnight p-10 rounded-sm max-w-md w-full relative z-10 shadow-2xl"
           >
             <button 
               onClick={onClose} 
-              className="absolute top-4 right-6 text-3xl font-light text-gray-400 hover:text-midnight transition-colors"
+              className="absolute top-4 right-6 text-3xl font-light text-gray-400 hover:text-white transition-colors"
             >
               &times;
             </button>
             
-            <h3 className="font-primary text-2xl font-bold mb-2 text-midnight tracking-wide">
+            <h3 className="font-primary text-2xl font-bold mb-2 text-white tracking-wide">
               Top 10 Website Secrets
             </h3>
             <p className="font-secondary text-sm text-gray-600 mb-8 leading-editorial">

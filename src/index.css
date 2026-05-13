@@ -1,6 +1,6 @@
-/* src/styles/index.css */
+/* src/index.css */
 
-/* Import Primary and Secondary Fonts[cite: 1] */
+/* Import Primary and Secondary Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Tailwind Core Directives */
@@ -16,12 +16,12 @@
   }
 
   body {
-    /* Applies the secondary font (Poppins) and default text color (Midnight) to the body[cite: 1] */
-    @apply font-secondary text-midnight bg-white; 
+    /* Applies the secondary font (Poppins) and default text color (White) to the body */
+    @apply font-secondary text-white bg-midnight; 
     overflow-x: hidden;
   }
 
-  /* Force all headings to use the primary font (Montserrat)[cite: 1] */
+  /* Force all headings to use the primary font (Montserrat) */
   h1, h2, h3, h4, h5, h6 {
     @apply font-primary;
   }
@@ -42,11 +42,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-softGray;
+  @apply bg-midnight;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-midnight rounded-full;
+  @apply bg-white rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
