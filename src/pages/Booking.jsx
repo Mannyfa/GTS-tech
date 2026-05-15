@@ -39,7 +39,7 @@ const Booking = () => {
               initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
               className="font-primary text-xs tracking-[0.3em] text-[#191970] dark:text-[#D4AF37] uppercase mb-6 block font-semibold"
             >
-            
+              Consultation
             </motion.h2>
             
             <div className="overflow-hidden mb-8">
@@ -62,7 +62,7 @@ const Booking = () => {
       </section>
 
       {/* 2. Main Booking Architecture */}
-      <section className="py-32 lg:py-48 px-6 lg:px-24 relative bg-white dark:bg-[#0B0C10] transition-colors duration-500">
+      <section className="py-24 lg:py-48 px-4 sm:px-6 lg:px-24 relative bg-white dark:bg-[#0B0C10] transition-colors duration-500">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           {/* LEFT COLUMN: Expectations & Trust */}
@@ -117,7 +117,8 @@ const Booking = () => {
               className="absolute -top-10 -right-10 w-48 h-48 bg-teal-100 dark:bg-teal-900/30 rounded-full blur-[60px] -z-10"
             />
             
-            <div className="flex-1 w-full h-full min-h-[700px] rounded-xl overflow-hidden bg-white dark:bg-white shadow-[0_20px_50px_rgba(25,25,112,0.05)] border border-gray-100 dark:border-none">
+            {/* FIXED HEIGHT FOR MOBILE: Changed min-h to h-screen/h-[800px] on mobile */}
+            <div className="flex-1 w-full h-[850px] md:h-[700px] rounded-xl overflow-hidden bg-white dark:bg-white shadow-[0_20px_50px_rgba(25,25,112,0.05)] border border-gray-100 dark:border-none">
               <iframe
                 src="https://calendly.com/kim-grandtech-solutions/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                 width="100%"

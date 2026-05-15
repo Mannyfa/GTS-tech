@@ -7,10 +7,10 @@ import Footer from '../components/layout/footer.jsx';
 import blessingImg from '../assets/images/BlesRaph.jpg';
 import kimberlyImg from '../assets/images/KimNuo.jpg';
 
-// 1. IMPORT YOUR FULL-SCREEN BACKGROUND IMAGE HERE
-import aboutHeroImg from '../assets/images/abouthero.jpg'; 
 
-// 2. IMPORT YOUR CORE VALUES IMAGE HERE
+import aboutHeroImg from '../assets/images/aboutty.jpg'; 
+
+
 import aboutCoreValuesImg from '../assets/images/sorttt.jpg';
 
 // =========================================================================
@@ -68,7 +68,7 @@ const About = () => {
   };
 
   return (
-    // Global wrapper set to support dark mode
+    
     <div className="min-h-screen bg-white dark:bg-[#0B0C10] font-secondary text-[#191970] dark:text-gray-100 overflow-hidden selection:bg-teal-500 selection:text-white transition-colors duration-500">
       
       {/* 1. Hero Section - Full Screen Image Background with Parallax */}
@@ -102,7 +102,7 @@ const About = () => {
           <div className="md:w-3/5 lg:w-1/2 flex flex-col items-start pt-10 lg:pt-0">
             <motion.h2 
               initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
-              className="font-primary text-xs tracking-[0.3em] text-[#D4AF37] uppercase mb-6 block font-semibold"
+              className="font-primary text-xs tracking-[0.3em] text-[#D4AF37] uppercase mb-6 block font-semibold [text-shadow:_0_2px_8px_rgba(0,0,0,0.8)] md:[text-shadow:none]"
             >
               Who We Are
             </motion.h2>
@@ -110,7 +110,7 @@ const About = () => {
             <div className="overflow-hidden mb-6">
               <motion.h1 
                 variants={revealVariants} initial="hidden" animate="visible"
-                className="font-primary text-5xl md:text-6xl font-bold text-[#D4AF37] tracking-tight leading-tight"
+                className="font-primary text-5xl md:text-6xl font-bold text-[#D4AF37] tracking-tight leading-tight [text-shadow:_0_4px_12px_rgba(0,0,0,0.8)] md:[text-shadow:none]"
               >
                 We Shape <br/> <span className="italic font-light">The Future.</span>
               </motion.h1>
@@ -118,12 +118,12 @@ const About = () => {
             
             <motion.div 
               initial={{ opacity: 0, width: 0 }} animate={{ opacity: 1, width: "100px" }} transition={{ duration: 1, delay: 0.5 }}
-              className="h-[2px] bg-[#D4AF37] my-8" 
+              className="h-[2px] bg-[#D4AF37] my-8 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:drop-shadow-none" 
             />
 
             <motion.p 
               variants={fadeUpVariants} initial="hidden" animate="visible" transition={{ delay: 0.3 }}
-              className="text-lg md:text-xl text-[#D4AF37]/90 leading-editorial max-w-md font-light"
+              className="text-lg md:text-xl text-[#D4AF37]/90 leading-editorial max-w-md font-light [text-shadow:_0_2px_8px_rgba(0,0,0,0.8)] md:[text-shadow:none]"
             >
               A hybrid tech and creative studio helping small and growing businesses build digital presence, streamline workflows, and tell powerful stories. We blend design, technology, and strategy to create brands that scale.
             </motion.p>
@@ -300,7 +300,7 @@ const About = () => {
               </div>
               <div>
                 <span className="block text-gray-400 dark:text-gray-500 text-xs uppercase tracking-widest mb-1">Direct Line</span>
-                <a href="tel:229-454-7920" className="text-teal-600 dark:text-teal-400 hover:text-[#191970] dark:hover:text-white transition-colors">229-454-7920</a>
+                <a href="tel:+1 (229) 380-8878 " className="text-teal-600 dark:text-teal-400 hover:text-[#191970] dark:hover:text-white transition-colors">+1 (229) 380-8878</a>
               </div>
               <div>
                 <span className="block text-gray-400 dark:text-gray-500 text-xs uppercase tracking-widest mb-1">Headquarters</span>

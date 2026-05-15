@@ -25,11 +25,11 @@ const Hero = ({ onOpenModal }) => {
   return (
     <section 
       ref={heroRef}
-      className="relative h-screen min-h-[600px] flex items-center justify-center bg-midnight text-white px-6 overflow-hidden"
+      className="relative h-screen min-h-[600px] flex items-center justify-center bg-white dark:bg-[#0B0C10] text-[#191970] dark:text-white px-6 overflow-hidden transition-colors duration-500"
     >
       {/* Animated Parallax Background Layer */}
       <motion.div 
-        className="absolute inset-0 z-0 bg-center bg-no-repeat bg-cover md:bg-cover"
+        className="absolute inset-0 z-0 bg-center bg-no-repeat bg-cover md:bg-cover transition-opacity duration-500"
         style={{
           backgroundImage: `url(${heroBg})`,
           y: yBg,
@@ -37,7 +37,9 @@ const Hero = ({ onOpenModal }) => {
       />
       
       {/* Cinematic Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to to-midnight z-10"></div>
+      {/* Adjusted the gradient to be a solid white/dark overlay to match the Home page aesthetic */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 dark:from-[#0B0C10]/95 dark:via-[#0B0C10]/80 to-transparent z-10 pointer-events-none transition-colors duration-500"></div>
+      <div className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none bg-noise mix-blend-overlay"></div>
       
       {/* Hero Content */}
       <motion.div 
@@ -49,13 +51,13 @@ const Hero = ({ onOpenModal }) => {
             initial="hidden" animate="visible" variants={revealVariants}
             className="font-primary text-5xl md:text-7xl font-bold leading-tight"
           >
-           <span className="text-[#191970]">Build Systems That</span>  <span className="text-[#008080] italic font-light">Shape the Future.</span>
+           <span className="text-[#191970] dark:text-white transition-colors duration-500">Build Systems That</span>  <span className="text-[#008080] dark:text-teal-400 italic font-light transition-colors duration-500">Shape the Future.</span>
           </motion.h1>
         </div>
         
         <motion.p 
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-          className="text-lg md:text-xl text-[#191970] mb-10 leading-editorial max-w-2xl font-light"
+          className="text-lg md:text-xl text-[#191970] dark:text-gray-300 mb-10 leading-editorial max-w-2xl font-light transition-colors duration-500"
         >
           We are a boutique hybrid tech and creative studio designing premium digital transformations for visionary founders.
         </motion.p>
@@ -64,12 +66,12 @@ const Hero = ({ onOpenModal }) => {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
         >
-          <button className="bg-[#008080] text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-midnight hover:text-white transition-colors duration-500">
+          <button className="bg-[#008080] dark:bg-teal-500 text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#191970] dark:hover:bg-white dark:hover:text-[#191970] transition-colors duration-500">
             Schedule Discovery
           </button>
           <button 
             onClick={onOpenModal}
-            className="border border-[#191970] text-[#191970] font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#008080] hover:border-[#008080] hover:text-white transition-colors duration-500"
+            className="border border-[#191970] dark:border-white text-[#191970] dark:text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#008080] dark:hover:bg-teal-500 hover:border-[#008080] dark:hover:border-teal-500 hover:text-white dark:hover:text-white transition-colors duration-500"
           >
             Free Strategy Report
           </button>

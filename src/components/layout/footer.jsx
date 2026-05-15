@@ -56,9 +56,9 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="flex flex-col space-y-4 font-primary text-sm tracking-widest uppercase text-left md:text-right">
             <h4 className="text-xs text-gray-500 mb-2 md:text-right">Connect</h4>
             <a href="mailto:support@grandtech-solutions.com" className="text-white hover:text-teal-400 md:hover:-translate-x-2 transition-all duration-300 md:self-end w-fit">Email Us</a>
-            <a href="https://www.instagram.com/grandtechsolutions" target="_blank" rel="noreferrer" className="text-white hover:text-teal-400 md:hover:-translate-x-2 transition-all duration-300 md:self-end w-fit">Instagram</a>
-            <a href="https://www.linkedin.com/in/grandtech-solutions-2655193bb" target="_blank" rel="noreferrer" className="text-white hover:text-teal-400 md:hover:-translate-x-2 transition-all duration-300 md:self-end w-fit">LinkedIn</a>
-            <a href="https://www.facebook.com/grandtechsolutions" target="_blank" rel="noreferrer" className="text-white hover:text-teal-400 md:hover:-translate-x-2 transition-all duration-300 md:self-end w-fit">Facebook</a>
+            <a href="https://www.instagram.com/grandtech_solutions_1?igsh=dDRuem41OWlhNWd2&utm_source=qr" target="_blank" rel="noreferrer" className="text-white hover:text-teal-400 md:hover:-translate-x-2 transition-all duration-300 md:self-end w-fit">Instagram</a>
+            <a href="https://www.linkedin.com/in/grandtech-solutions-2655193bb?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noreferrer" className="text-white hover:text-teal-400 md:hover:-translate-x-2 transition-all duration-300 md:self-end w-fit">LinkedIn</a>
+            <a href="https://www.facebook.com/share/1B6n8aDu3d/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="text-white hover:text-teal-400 md:hover:-translate-x-2 transition-all duration-300 md:self-end w-fit">Facebook</a>
           </motion.div>
 
         </div>
