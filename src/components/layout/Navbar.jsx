@@ -1,5 +1,6 @@
 // src/components/layout/Navbar.jsx
 import React, { useState, useEffect } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoImg from '../../assets/images/logo.png'; 
@@ -8,6 +9,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  
+  // Initialize Theme Hook
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +75,24 @@ const Navbar = () => {
               }`}></span>
             </Link>
           ))}
+          
+          {/* Desktop Theme Toggle Button */}
+          <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-white/10 transition-colors text-gray-300 hover:text-white focus:outline-none"
+            aria-label="Toggle Dark Mode"
+          >
+            {theme === 'light' ? (
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            ) : (
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            )}
+          </button>
+
           <Link 
             to="/booking"
             className="bg-[#D4AF37]/90 backdrop-blur-md border border-[#4e3612] text-white px-6 py-2.5 text-xs font-primary tracking-[0.15em] uppercase hover:bg-teal-500 hover:border-teal-400 hover:shadow-[0_0_15px_rgba(45,212,191,0.4)] transition-all duration-300"
@@ -79,16 +101,37 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
-        <button 
-          className="md:hidden z-50 flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle Mobile Menu"
-        >
-          <span className={`block w-6 h-[2px] bg-white transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45 translate-y-[8px]' : ''}`}></span>
-          <span className={`block w-6 h-[2px] bg-white transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-          <span className={`block w-6 h-[2px] bg-white transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''}`}></span>
-        </button>
+        {/* Mobile Controls (Theme Toggle + Hamburger) */}
+        <div className="md:hidden flex items-center space-x-4 z-50">
+          
+          {/* Mobile Theme Toggle */}
+          <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-white/10 transition-colors text-white focus:outline-none"
+            aria-label="Toggle Dark Mode"
+          >
+            {theme === 'light' ? (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            )}
+          </button>
+
+          {/* Mobile Hamburger Toggle */}
+          <button 
+            className="flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Mobile Menu"
+          >
+            <span className={`block w-6 h-[2px] bg-white transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? 'rotate-45 translate-y-[8px]' : ''}`}></span>
+            <span className={`block w-6 h-[2px] bg-white transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`block w-6 h-[2px] bg-white transition-transform duration-300 ease-in-out ${isMobileMenuOpen ? '-rotate-45 -translate-y-[8px]' : ''}`}></span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}

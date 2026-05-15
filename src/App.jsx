@@ -6,6 +6,8 @@ import Quiz from './pages/Quiz';
 
 import Navbar from './components/layout/Navbar';
 import ScrollToTop from './components/layout/ScrollToTop';
+import { HelmetProvider } from 'react-helmet-async';
+import { ThemeProvider } from './context/ThemeContext';
 
 
 import Home from './pages/Home.jsx';
@@ -20,7 +22,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <Router>
+    <ThemeProvider>
+      <HelmetProvider>
+        <Router>
 
       <ScrollToTop />
 
@@ -47,6 +51,8 @@ function App() {
 
       </div>
     </Router>
+    </HelmetProvider>
+    </ThemeProvider>
   );
 }
 

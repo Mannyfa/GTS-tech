@@ -68,13 +68,13 @@ const About = () => {
   };
 
   return (
-    // Global wrapper set to White
-    <div className="min-h-screen bg-white font-secondary text-[#191970] overflow-hidden selection:bg-teal-500 selection:text-white">
+    // Global wrapper set to support dark mode
+    <div className="min-h-screen bg-white dark:bg-[#0B0C10] font-secondary text-[#191970] dark:text-gray-100 overflow-hidden selection:bg-teal-500 selection:text-white transition-colors duration-500">
       
       {/* 1. Hero Section - Full Screen Image Background with Parallax */}
       <section 
         ref={heroRef}
-        className="relative pt-40 pb-20 px-6 lg:px-24 min-h-[80vh] md:min-h-screen flex items-center overflow-hidden bg-white"
+        className="relative pt-40 pb-20 px-6 lg:px-24 min-h-[80vh] md:min-h-screen flex items-center overflow-hidden bg-white dark:bg-[#0B0C10] transition-colors duration-500"
       >
         {/* Parallax Background Layer */}
         <motion.div 
@@ -132,16 +132,16 @@ const About = () => {
       </section>
 
       {/* 2. Mission & Vision - White Section */}
-      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white relative border-t border-gray-100 z-20">
+      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white dark:bg-[#0B0C10] relative border-t border-gray-100 dark:border-white/5 z-20 transition-colors duration-500">
         <div className="max-w-7xl mx-auto relative flex flex-col lg:flex-row items-center lg:items-end justify-between">
           
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUpVariants}
             className="lg:w-2/3 pb-12 lg:pb-0 z-10"
           >
-            <span className="font-primary text-xs tracking-[0.3em] text-[#4e3612] uppercase mb-6 block">Our Mission</span>
+            <span className="font-primary text-xs tracking-[0.3em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-6 block">Our Mission</span>
             {/* Reduced from 5xl to 4xl */}
-            <h2 className="font-primary text-2xl md:text-4xl leading-[1.3] text-[#191970] font-medium pr-4 lg:pr-12">
+            <h2 className="font-primary text-2xl md:text-4xl leading-[1.3] text-[#191970] dark:text-white font-medium pr-4 lg:pr-12">
               To build powerful brands and digital systems that elevate voices, strengthen communities, and position businesses for <span className="text-teal-600 border-b-2 border-teal-600 pb-1">global influence,</span> sustainable growth, and long-term success.
             </h2>
           </motion.div>
@@ -162,24 +162,24 @@ const About = () => {
       </section>
 
       {/* 3. Core Values - Section with Image Replacement */}
-      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white text-[#191970] relative overflow-hidden z-20">
+      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white dark:bg-[#0B0C10] text-[#191970] dark:text-white relative overflow-hidden z-20 transition-colors duration-500">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
           
           {/* Left Text Side */}
           <div className="lg:w-1/2">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="mb-12">
-              <h2 className="font-primary text-xs tracking-[0.3em] text-[#4e3612] uppercase mb-4">The Standard</h2>
-              <h3 className="font-primary text-3xl md:text-4xl font-bold text-[#191970]">Our Core Values</h3>
+              <h2 className="font-primary text-xs tracking-[0.3em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-4">The Standard</h2>
+              <h3 className="font-primary text-3xl md:text-4xl font-bold text-[#191970] dark:text-white">Our Core Values</h3>
             </motion.div>
 
             <motion.div 
               variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
-              className="flex flex-col space-y-6 border-l border-gray-200 pl-8"
+              className="flex flex-col space-y-6 border-l border-gray-200 dark:border-white/10 pl-8"
             >
               {['Excellence', 'Creativity', 'Integrity', 'Innovation', 'Global Impact'].map((value, index) => (
                 <motion.div key={value} variants={fadeUpVariants} className="flex items-center gap-6">
-                  <span className="font-primary text-[#4e3612] text-xl font-light w-8">0{index + 1}</span>
-                  <h4 className="font-primary text-lg md:text-xl tracking-wide text-[#191970]">{value}</h4>
+                  <span className="font-primary text-[#4e3612] dark:text-[#D4AF37] text-xl font-light w-8">0{index + 1}</span>
+                  <h4 className="font-primary text-lg md:text-xl tracking-wide text-[#191970] dark:text-gray-200">{value}</h4>
                 </motion.div>
               ))}
             </motion.div>
@@ -192,7 +192,7 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative w-full max-w-md lg:max-w-lg aspect-square lg:aspect-auto lg:h-[500px] overflow-hidden rounded-2xl shadow-xl border border-gray-100"
+              className="relative w-full max-w-md lg:max-w-lg aspect-square lg:aspect-auto lg:h-[500px] overflow-hidden rounded-2xl shadow-xl dark:shadow-none border border-gray-100 dark:border-white/5"
             >
               {/* Subtle decorative offset block behind the image */}
               <div className="absolute inset-0 bg-teal-500/5 mix-blend-multiply pointer-events-none"></div>
@@ -209,15 +209,15 @@ const About = () => {
       </section>
 
       {/* 4. Meet the Founders - White BG */}
-      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white border-t border-gray-100 z-20 relative">
+      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white dark:bg-[#0B0C10] border-t border-gray-100 dark:border-white/5 z-20 relative transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
           
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
             className="text-center mb-24"
           >
-            <h2 className="font-primary text-xs tracking-[0.3em] text-[#4e3612] uppercase mb-4">Leadership</h2>
-            <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl font-bold text-[#191970]">Meet the Founders</h3>
+            <h2 className="font-primary text-xs tracking-[0.3em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-4">Leadership</h2>
+            <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl font-bold text-[#191970] dark:text-white">Meet the Founders</h3>
           </motion.div>
 
           <div className="flex flex-col space-y-24 lg:space-y-32">
@@ -226,7 +226,7 @@ const About = () => {
             <div className="relative flex flex-col md:flex-row items-center">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}
-                className="w-full md:w-3/5 lg:w-1/2 z-10 aspect-[4/5] overflow-hidden bg-gray-100 rounded-lg shadow-md"
+                className="w-full md:w-3/5 lg:w-1/2 z-10 aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-[#151720] rounded-lg shadow-md dark:shadow-none"
               >
                 <motion.img 
                   whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }}
@@ -237,12 +237,12 @@ const About = () => {
               
               <motion.div 
                 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
-                className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-1/2 lg:w-2/5 bg-white p-8 md:p-10 z-20 mx-4 sm:mx-8 md:mx-0 md:-ml-16 mt-[-60px] md:mt-auto shadow-xl border border-gray-100 relative self-center md:self-auto rounded-xl"
+                className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-1/2 lg:w-2/5 bg-white dark:bg-[#1C1F26] p-8 md:p-10 z-20 mx-4 sm:mx-8 md:mx-0 md:-ml-16 mt-[-60px] md:mt-auto shadow-xl dark:shadow-none border border-gray-100 dark:border-white/10 relative self-center md:self-auto rounded-xl transition-colors duration-500"
               >
                 <div className="w-12 h-[2px] bg-teal-500 mb-6"></div>
-                <h3 className="font-primary text-xl md:text-2xl font-bold text-[#191970]">Blessing Raphael</h3>
-                <p className="font-primary text-xs tracking-widest uppercase text-teal-600 mt-2 mb-4">COO / Founder</p>
-                <p className="text-gray-600 leading-editorial text-sm">
+                <h3 className="font-primary text-xl md:text-2xl font-bold text-[#191970] dark:text-white">Blessing Raphael</h3>
+                <p className="font-primary text-xs tracking-widest uppercase text-teal-600 dark:text-teal-400 mt-2 mb-4">President / Founder</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-editorial text-sm">
                   A visionary creative-tech leader with a passion for building businesses, shaping brands, and designing scalable systems that empower growth. Blessing blends creativity, strategy, and operational excellence to help companies transform their digital presence and unlock their full potential. Her work is driven by clarity, innovation, and a deep commitment to excellence - crafting solutions that are not only beautiful, but built to last.
                 </p>
               </motion.div>
@@ -252,7 +252,7 @@ const About = () => {
             <div className="relative flex flex-col md:flex-row-reverse items-center">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}
-                className="w-full md:w-3/5 lg:w-1/2 z-10 aspect-[4/5] overflow-hidden bg-gray-100 rounded-lg shadow-md"
+                className="w-full md:w-3/5 lg:w-1/2 z-10 aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-[#151720] rounded-lg shadow-md dark:shadow-none"
               >
                 <motion.img 
                   whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }}
@@ -263,12 +263,12 @@ const About = () => {
               
               <motion.div 
                 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.3 }}
-                className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-1/2 lg:w-2/5 bg-white p-8 md:p-10 z-20 mx-4 sm:mx-8 md:mx-0 md:-mr-16 mt-[-60px] md:mt-auto shadow-xl border border-gray-100 relative self-center md:self-auto rounded-xl"
+                className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-1/2 lg:w-2/5 bg-white dark:bg-[#1C1F26] p-8 md:p-10 z-20 mx-4 sm:mx-8 md:mx-0 md:-mr-16 mt-[-60px] md:mt-auto shadow-xl dark:shadow-none border border-gray-100 dark:border-white/10 relative self-center md:self-auto rounded-xl transition-colors duration-500"
               >
-                <div className="w-12 h-[2px] bg-[#4e3612] mb-6"></div>
-                <h3 className="font-primary text-xl md:text-2xl font-bold text-[#191970]">Kimberly Nuonum</h3>
-                <p className="font-primary text-xs tracking-widest uppercase text-[#4e3612] mt-2 mb-4">Co-Founder / CEO</p>
-                <p className="text-gray-600 leading-editorial text-sm">
+                <div className="w-12 h-[2px] bg-[#4e3612] dark:bg-[#D4AF37] mb-6"></div>
+                <h3 className="font-primary text-xl md:text-2xl font-bold text-[#191970] dark:text-white">Kimberly Nuonum</h3>
+                <p className="font-primary text-xs tracking-widest uppercase text-[#4e3612] dark:text-[#D4AF37] mt-2 mb-4">Co-Founder / CEO</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-editorial text-sm">
                   Kimberly O. Nuonum is a global business strategist and digital transformation leader with over two decades of experience delivering scalable digital marketing, supply chain and technology solutions. Working closely with C-suite executives and leadership teams, she translates vision into structured strategies that strengthen digital presence, operational efficiency, and long-term growth. With experience across domestic and international markets, Kimberly brings a global perspective to innovation and business development.
                 </p>
               </motion.div>
@@ -281,35 +281,35 @@ const About = () => {
       {/* 5. Contact Form & Details - White Section */}
       <motion.section 
         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariants}
-        className="py-32 lg:py-48 px-6 lg:px-24 bg-white border-t border-gray-100 z-20 relative"
+        className="py-32 lg:py-48 px-6 lg:px-24 bg-white dark:bg-[#0B0C10] border-t border-gray-100 dark:border-white/5 z-20 relative transition-colors duration-500"
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           <div className="flex flex-col justify-center space-y-10">
             <div>
-              <h2 className="font-primary text-3xl font-bold mb-4 text-[#191970]">Let's Build Together.</h2>
-              <p className="text-gray-600 leading-editorial max-w-md text-sm md:text-base">
+              <h2 className="font-primary text-3xl font-bold mb-4 text-[#191970] dark:text-white">Let's Build Together.</h2>
+              <p className="text-gray-600 dark:text-gray-400 leading-editorial max-w-md text-sm md:text-base">
                 Ready to elevate your digital presence? Reach out directly or fill out the form to start the conversation.
               </p>
             </div>
             
             <div className="space-y-6 font-primary text-sm tracking-wide">
               <div>
-                <span className="block text-gray-400 text-xs uppercase tracking-widest mb-1">Email Support</span>
-                <a href="mailto:support@grandtech-solutions.com" className="text-teal-600 hover:text-[#191970] transition-colors">support@grandtech-solutions.com</a>
+                <span className="block text-gray-400 dark:text-gray-500 text-xs uppercase tracking-widest mb-1">Email Support</span>
+                <a href="mailto:support@grandtech-solutions.com" className="text-teal-600 dark:text-teal-400 hover:text-[#191970] dark:hover:text-white transition-colors">support@grandtech-solutions.com</a>
               </div>
               <div>
-                <span className="block text-gray-400 text-xs uppercase tracking-widest mb-1">Direct Line</span>
-                <a href="tel:229-454-7920" className="text-teal-600 hover:text-[#191970] transition-colors">229-454-7920</a>
+                <span className="block text-gray-400 dark:text-gray-500 text-xs uppercase tracking-widest mb-1">Direct Line</span>
+                <a href="tel:229-454-7920" className="text-teal-600 dark:text-teal-400 hover:text-[#191970] dark:hover:text-white transition-colors">229-454-7920</a>
               </div>
               <div>
-                <span className="block text-gray-400 text-xs uppercase tracking-widest mb-1">Headquarters</span>
-                <p className="text-[#191970]">30331 Atlanta, GA, United States</p>
+                <span className="block text-gray-400 dark:text-gray-500 text-xs uppercase tracking-widest mb-1">Headquarters</span>
+                <p className="text-[#191970] dark:text-gray-300">30331 Atlanta, GA, United States</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-50 p-8 md:p-10 shadow-sm border border-gray-200 relative group overflow-hidden rounded-xl">
+          <div className="bg-gray-50 dark:bg-[#151720] p-8 md:p-10 shadow-sm dark:shadow-none border border-gray-200 dark:border-white/10 relative group overflow-hidden rounded-xl transition-colors duration-500">
             <div className="absolute top-0 left-0 w-full h-[2px] bg-transparent group-focus-within:bg-teal-500 transition-colors duration-500"></div>
             
             {submitStatus === 'success' ? (
@@ -317,14 +317,14 @@ const About = () => {
                  initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} 
                  className="h-full flex flex-col items-center justify-center text-center py-12"
                >
-                 <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-6">
-                    <span className="text-teal-600 text-2xl">✓</span>
+                 <div className="w-16 h-16 bg-teal-50 dark:bg-teal-900/30 rounded-full flex items-center justify-center mb-6">
+                    <span className="text-teal-600 dark:text-teal-400 text-2xl">✓</span>
                  </div>
-                 <h3 className="font-primary text-xl font-bold text-[#191970] mb-2">Inquiry Received.</h3>
-                 <p className="text-gray-600 font-light text-sm">Thank you for reaching out. A member of the GTS team will review your project details and contact you shortly.</p>
+                 <h3 className="font-primary text-xl font-bold text-[#191970] dark:text-white mb-2">Inquiry Received.</h3>
+                 <p className="text-gray-600 dark:text-gray-400 font-light text-sm">Thank you for reaching out. A member of the GTS team will review your project details and contact you shortly.</p>
                  <button 
                     onClick={() => setSubmitStatus(null)}
-                    className="mt-8 text-xs font-primary uppercase tracking-widest text-[#4e3612] hover:text-teal-600 transition-colors"
+                    className="mt-8 text-xs font-primary uppercase tracking-widest text-[#4e3612] dark:text-[#D4AF37] hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
                  >
                    Send Another Message
                  </button>
@@ -332,20 +332,20 @@ const About = () => {
             ) : (
               <form ref={formRef} onSubmit={handleFormSubmit} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input type="text" name="from_name" placeholder="First Name" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-teal-500 bg-transparent transition-colors text-[#191970] placeholder-gray-400 text-sm" required />
-                  <input type="text" name="last_name" placeholder="Last Name" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-teal-500 bg-transparent transition-colors text-[#191970] placeholder-gray-400 text-sm" required />
+                  <input type="text" name="from_name" placeholder="First Name" className="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:outline-none focus:border-teal-500 dark:focus:border-teal-400 bg-transparent transition-colors text-[#191970] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm" required />
+                  <input type="text" name="last_name" placeholder="Last Name" className="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:outline-none focus:border-teal-500 dark:focus:border-teal-400 bg-transparent transition-colors text-[#191970] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm" required />
                 </div>
-                <input type="email" name="reply_to" placeholder="Email Address" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-teal-500 bg-transparent transition-colors text-[#191970] placeholder-gray-400 text-sm" required />
-                <textarea name="message" placeholder="Tell us about your project..." rows="4" className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-teal-500 bg-transparent resize-none transition-colors text-[#191970] placeholder-gray-400 text-sm" required></textarea>
+                <input type="email" name="reply_to" placeholder="Email Address" className="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:outline-none focus:border-teal-500 dark:focus:border-teal-400 bg-transparent transition-colors text-[#191970] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm" required />
+                <textarea name="message" placeholder="Tell us about your project..." rows="4" className="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:outline-none focus:border-teal-500 dark:focus:border-teal-400 bg-transparent resize-none transition-colors text-[#191970] dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm" required></textarea>
                 
                 {submitStatus === 'error' && (
-                  <p className="text-red-500 text-xs font-primary tracking-wide">Something went wrong. Please try again or email us directly.</p>
+                  <p className="text-red-500 dark:text-red-400 text-xs font-primary tracking-wide">Something went wrong. Please try again or email us directly.</p>
                 )}
 
                 <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className={`bg-[#191970] text-white font-primary px-8 py-4 uppercase tracking-widest text-xs hover:bg-teal-600 transition-colors w-full md:w-auto mt-4 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`bg-[#191970] dark:bg-white text-white dark:text-[#191970] font-primary px-8 py-4 uppercase tracking-widest text-xs hover:bg-teal-600 dark:hover:bg-teal-400 dark:hover:text-white transition-colors w-full md:w-auto mt-4 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
                   {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                 </button>
