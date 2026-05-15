@@ -85,7 +85,7 @@ const Home = () => {
               initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="font-primary text-[10px] lg:text-xs tracking-[0.3em] text-[#008080] uppercase mb-4 lg:mb-6 block font-bold"
             >
-              The Problem
+             
             </motion.h2>
             <div className="overflow-hidden mb-4 lg:mb-8">
               <motion.h3 
@@ -143,7 +143,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="font-primary text-[10px] lg:text-xs tracking-[0.3em] text-[#D4AF37] uppercase font-bold"
             >
-              The Solution
+              
             </motion.h2>
             <motion.h3 
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
@@ -167,7 +167,7 @@ const Home = () => {
       <section className="py-24 bg-gray-50 dark:bg-[#12141A] border-b border-gray-200 dark:border-white/10 transition-colors duration-500">
         <div className="max-w-7xl mx-auto px-6 lg:px-24">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="text-center mb-16">
-             <h2 className="font-primary text-xs tracking-[0.3em] text-[#008080] uppercase mb-4 font-bold">Services Snapshot</h2>
+             
              <h3 className="font-primary text-3xl md:text-4xl font-bold text-[#191970] dark:text-white">What We Help With</h3>
           </motion.div>
           
@@ -198,7 +198,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="text-center mb-24">
-            <h2 className="font-primary text-xs tracking-[0.3em] text-[#D4AF37] uppercase mb-4 font-bold">Investment</h2>
+            
             <h3 className="font-primary text-3xl md:text-5xl font-bold text-[#191970] dark:text-white">Choose the Right Package.</h3>
           </motion.div>
 
@@ -329,7 +329,7 @@ const Home = () => {
 
           <div className="w-[60%] flex flex-col space-y-6 lg:space-y-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}>
-              <h2 className="font-primary text-[10px] lg:text-xs tracking-[0.3em] text-[#D4AF37] uppercase mb-2 lg:mb-4 font-bold">Our Process</h2>
+              
               <h3 className="font-primary text-xl md:text-5xl font-bold text-[#191970] dark:text-white">How It Works.</h3>
             </motion.div>
 

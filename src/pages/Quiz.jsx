@@ -50,7 +50,7 @@ const quizQuestions = [
       { text: "Often — I'm constantly juggling", value: "c" },
       { text: "Almost always — I need help immediately", value: "d" }
     ],
-    explanation: "Consistent overwhelm signals the need for better systems and strategic support.",
+    explanation: "Consistently overwhelm signals the need for better systems and strategic support.",
     hint: "Overwhelm is usually a sign of missing structure or support."
   },
   {
