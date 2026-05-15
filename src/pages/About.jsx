@@ -8,7 +8,7 @@ import blessingImg from '../assets/images/BlesRaph.jpg';
 import kimberlyImg from '../assets/images/KimNuo.jpg';
 
 
-import aboutHeroImg from '../assets/images/aboutty.jpg'; 
+import aboutHeroImg from '../assets/images/last.jpg'; 
 
 
 import aboutCoreValuesImg from '../assets/images/sorttt.jpg';
