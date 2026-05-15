@@ -1,6 +1,6 @@
 // src/pages/About.jsx
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Footer from '../components/layout/footer.jsx';
 
@@ -10,61 +10,8 @@ import kimberlyImg from '../assets/images/KimNuo.jpg';
 // 1. IMPORT YOUR FULL-SCREEN BACKGROUND IMAGE HERE
 import aboutHeroImg from '../assets/images/abouthero.jpg'; 
 
-// =========================================================================
-// CUSTOM ANIMATION COMPONENTS
-// =========================================================================
-
-// Tech Constellation Illustration (Updated for Light Theme)
-const CoreValuesConstellation = () => {
-  return (
-    <div className="relative w-full h-full min-h-[300px] flex items-center justify-center pointer-events-none">
-      {/* Background Pulse (Subtle on white) */}
-      <motion.div 
-        animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.1, 0.05] }} 
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 m-auto w-64 h-64 bg-teal-500 blur-[80px] rounded-full"
-      />
-
-      <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
-        {/* Connection Lines (Darker for white bg) */}
-        <motion.path 
-          initial={{ pathLength: 0, opacity: 0 }} 
-          whileInView={{ pathLength: 1, opacity: 0.4 }} 
-          transition={{ duration: 2, ease: "easeInOut" }}
-          d="M200 80 L320 160 L280 300 L120 300 L80 160 Z M200 80 L200 200 L320 160 M200 200 L280 300 M200 200 L120 300 M200 200 L80 160" 
-          stroke="#14b8a6" strokeWidth="1" fill="none" 
-        />
-        
-        {/* Core Node (Center) */}
-        <motion.circle 
-          initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.5, type: "spring" }}
-          cx="200" cy="200" r="12" fill="#191970" stroke="#4e3612" strokeWidth="3" 
-        />
-        <motion.circle animate={{ scale: [1, 1.5, 1], opacity: [0.4, 0, 0.4] }} transition={{ duration: 2, repeat: Infinity }} cx="200" cy="200" r="12" fill="none" stroke="#191970" strokeWidth="1" />
-
-        {/* Value Nodes */}
-        {[
-          { cx: 200, cy: 80, delay: 0.6 },
-          { cx: 320, cy: 160, delay: 0.7 },
-          { cx: 280, cy: 300, delay: 0.8 },
-          { cx: 120, cy: 300, delay: 0.9 },
-          { cx: 80, cy: 160, delay: 1.0 }
-        ].map((node, index) => (
-          <g key={index}>
-            <motion.circle 
-              initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: node.delay, type: "spring" }}
-              cx={node.cx} cy={node.cy} r="6" fill="#14b8a6" 
-            />
-            <motion.circle 
-              animate={{ scale: [1, 2, 1], opacity: [0.3, 0, 0.3] }} transition={{ duration: 3, repeat: Infinity, delay: node.delay }}
-              cx={node.cx} cy={node.cy} r="6" fill="none" stroke="#14b8a6" strokeWidth="1" 
-            />
-          </g>
-        ))}
-      </svg>
-    </div>
-  );
-};
+// 2. IMPORT YOUR CORE VALUES IMAGE HERE
+import aboutCoreValuesImg from '../assets/images/sorttt.jpg';
 
 // =========================================================================
 // MAIN ABOUT COMPONENT
@@ -74,6 +21,14 @@ const About = () => {
   const formRef = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  
+  // Parallax Setup for Hero
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -116,21 +71,32 @@ const About = () => {
     // Global wrapper set to White
     <div className="min-h-screen bg-white font-secondary text-[#191970] overflow-hidden selection:bg-teal-500 selection:text-white">
       
-      {/* 1. Hero Section - Full Screen Image Background with Left-Aligned Text */}
+      {/* 1. Hero Section - Full Screen Image Background with Parallax */}
       <section 
-        className="relative pt-40 pb-20 px-6 lg:px-24 min-h-[80vh] md:min-h-screen flex items-center overflow-hidden"
-        style={{
-          backgroundImage: `url(${aboutHeroImg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-          backgroundRepeat: 'no-repeat'
-        }}
+        ref={heroRef}
+        className="relative pt-40 pb-20 px-6 lg:px-24 min-h-[80vh] md:min-h-screen flex items-center overflow-hidden bg-white"
       >
+        {/* Parallax Background Layer */}
+        <motion.div 
+          style={{ y: backgroundY }}
+          className="absolute inset-0 w-full h-[120%] -top-[10%] z-0"
+        >
+          <div 
+            className="w-full h-full"
+            style={{
+              backgroundImage: `url(${aboutHeroImg})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center right',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+        </motion.div>
+
         {/* Gradient overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#191970]/95 via-[#191970]/80 to-[#191970]/20 z-0 pointer-events-none"></div>
-        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-noise mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#191970]/95 via-[#191970]/80 to-[#191970]/20 z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none bg-noise mix-blend-overlay"></div>
         
-        <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-7xl mx-auto w-full relative z-20">
           
           {/* Left-Aligned Text Content */}
           <div className="md:w-3/5 lg:w-1/2 flex flex-col items-start pt-10 lg:pt-0">
@@ -166,7 +132,7 @@ const About = () => {
       </section>
 
       {/* 2. Mission & Vision - White Section */}
-      <section className="py-24 px-6 lg:px-24 bg-white relative border-t border-gray-100">
+      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white relative border-t border-gray-100 z-20">
         <div className="max-w-7xl mx-auto relative flex flex-col lg:flex-row items-center lg:items-end justify-between">
           
           <motion.div 
@@ -195,8 +161,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* 3. Core Values - White Section with Constellation */}
-      <section className="py-24 md:py-32 px-6 lg:px-24 bg-white text-[#191970] relative overflow-hidden">
+      {/* 3. Core Values - Section with Image Replacement */}
+      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white text-[#191970] relative overflow-hidden z-20">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
           
           {/* Left Text Side */}
@@ -219,16 +185,31 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* Right Illustration Side */}
-          <div className="lg:w-1/2 w-full mt-16 lg:mt-0 bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm">
-            <CoreValuesConstellation />
+          {/* Right Image Side */}
+          <div className="lg:w-1/2 w-full mt-16 lg:mt-0 flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="relative w-full max-w-md lg:max-w-lg aspect-square lg:aspect-auto lg:h-[500px] overflow-hidden rounded-2xl shadow-xl border border-gray-100"
+            >
+              {/* Subtle decorative offset block behind the image */}
+              <div className="absolute inset-0 bg-teal-500/5 mix-blend-multiply pointer-events-none"></div>
+              
+              <img 
+                src={aboutCoreValuesImg} 
+                alt="Grand Tech Solutions Core Values" 
+                className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 transition-all duration-700"
+              />
+            </motion.div>
           </div>
 
         </div>
       </section>
 
       {/* 4. Meet the Founders - White BG */}
-      <section className="py-24 md:py-32 px-6 lg:px-24 bg-white border-t border-gray-100">
+      <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white border-t border-gray-100 z-20 relative">
         <div className="max-w-7xl mx-auto">
           
           <motion.div 
@@ -300,7 +281,7 @@ const About = () => {
       {/* 5. Contact Form & Details - White Section */}
       <motion.section 
         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUpVariants}
-        className="py-24 md:py-32 px-6 lg:px-24 bg-white border-t border-gray-100"
+        className="py-32 lg:py-48 px-6 lg:px-24 bg-white border-t border-gray-100 z-20 relative"
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           

@@ -25,15 +25,13 @@ const Hero = ({ onOpenModal }) => {
   return (
     <section 
       ref={heroRef}
-      className="relative h-screen flex items-center justify-center bg-midnight text-white px-6 overflow-hidden"
+      className="relative h-screen min-h-[600px] flex items-center justify-center bg-midnight text-white px-6 overflow-hidden"
     >
       {/* Animated Parallax Background Layer */}
       <motion.div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-center bg-no-repeat bg-cover md:bg-cover"
         style={{
           backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
           y: yBg,
         }}
       />
@@ -51,7 +49,7 @@ const Hero = ({ onOpenModal }) => {
             initial="hidden" animate="visible" variants={revealVariants}
             className="font-primary text-5xl md:text-7xl font-bold leading-tight"
           >
-           <span className="text-[#191970]">Build Systems That</span>  <span className="text-electric italic font-light">Shape the Future.</span>
+           <span className="text-[#191970]">Build Systems That</span>  <span className="text-[#008080] italic font-light">Shape the Future.</span>
           </motion.h1>
         </div>
         
@@ -66,12 +64,12 @@ const Hero = ({ onOpenModal }) => {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
         >
-          <button className="bg-electric text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-midnight hover:text-white transition-colors duration-500">
+          <button className="bg-[#008080] text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-midnight hover:text-white transition-colors duration-500">
             Schedule Discovery
           </button>
           <button 
             onClick={onOpenModal}
-            className="border border-teal text-teal font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-teal hover:text-white transition-colors duration-500"
+            className="border border-[#191970] text-[#191970] font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#008080] hover:border-[#008080] hover:text-white transition-colors duration-500"
           >
             Free Strategy Report
           </button>
