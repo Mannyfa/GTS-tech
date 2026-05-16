@@ -22,7 +22,7 @@ const About = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   
-  // Parallax Setup for Hero
+  
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -216,7 +216,7 @@ const About = () => {
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
             className="text-center mb-24"
           >
-            <h2 className="font-primary text-xs tracking-[0.3em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-4">Leadership</h2>
+            
             <h3 className="font-primary text-3xl md:text-4xl lg:text-5xl font-bold text-[#191970] dark:text-white">Meet the Founders</h3>
           </motion.div>
 
