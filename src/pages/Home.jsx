@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Hero from '../components/layout/Hero.jsx';
-import Footer from '../components/layout/Footer.jsx'; 
+import Footer from '../components/layout/footer.jsx'; 
 import LeadCaptureModal from '../features/LeadCaptureModal.jsx';
 
 import GiftModal from '../components/layout/GiftModal.jsx'; 

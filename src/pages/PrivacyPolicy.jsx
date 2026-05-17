@@ -1,6 +1,6 @@
 // src/pages/PrivacyPolicy.jsx
 import React, { useEffect } from 'react';
-import Footer from '../components/layout/Footer.jsx';
+import Footer from '../components/layout/footer.jsx';
 
 const PrivacyPolicy = () => {
   
