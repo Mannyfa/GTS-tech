@@ -82,7 +82,7 @@ const Quiz = () => {
   };
 
   return (
-    <div className="min-h-screen bg-midnight flex flex-col relative overflow-hidden font-secondary text-white">
+    <div className="min-h-screen bg-[#0B0C10] flex flex-col relative overflow-hidden font-secondary text-white transition-colors duration-500">
       {/* Background Noise for premium feel */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none bg-noise mix-blend-overlay"></div>
 
@@ -92,7 +92,7 @@ const Quiz = () => {
           &larr; Back to Services
         </Link>
         {!isFinished && (
-          <span className="font-primary text-sm text-steelGold tracking-widest">
+          <span className="font-primary text-sm text-[#D4AF37] tracking-widest">
             0{currentStep + 1} / 0{quizQuestions.length}
           </span>
         )}
@@ -119,10 +119,10 @@ const Quiz = () => {
                   <button
                     key={idx}
                     onClick={() => setSelectedOption(idx)}
-                    className={`text-left p-6 border transition-all duration-300 font-light text-lg md:text-xl
+                    className={`text-left p-6 border rounded-lg transition-all duration-300 font-light text-lg md:text-xl
                       ${selectedOption === idx 
-                        ? 'border-electric bg-electric/10 text-white' 
-                        : 'border-white/20 text-gray-300 hover:border-white/50 hover:bg-midnight/5'
+                        ? 'border-[#008080] bg-[#008080]/20 text-white' 
+                        : 'border-white/20 text-gray-300 hover:border-white/50 hover:bg-white/5'
                       }`}
                   >
                     {option.text}
@@ -135,9 +135,9 @@ const Quiz = () => {
                 {selectedOption !== null && (
                   <motion.div 
                     initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }}
-                    className="bg-midnight/5 border border-white/10 p-6 mb-8"
+                    className="bg-white/5 border border-white/10 rounded-lg p-6 mb-8"
                   >
-                    <p className="text-steelGold font-primary text-xs tracking-widest uppercase mb-2">GTS Insight</p>
+                    <p className="text-[#D4AF37] font-primary text-xs tracking-widest uppercase mb-2">GTS Insight</p>
                     <p className="text-sm md:text-base leading-editorial text-gray-300 font-light mb-2">
                       {quizQuestions[currentStep].explanation}
                     </p>
@@ -154,7 +154,7 @@ const Quiz = () => {
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                     <button 
                       onClick={handleNext}
-                      className="bg-electric text-white font-primary px-10 py-5 tracking-widest uppercase text-sm hover:bg-midnight hover:text-white transition-colors duration-500 w-full md:w-auto"
+                      className="bg-[#191970] text-white font-primary rounded-lg px-10 py-5 tracking-widest uppercase text-sm hover:bg-[#D4AF37] hover:text-[#191970] transition-colors duration-500 w-full md:w-auto"
                     >
                       {currentStep === quizQuestions.length - 1 ? 'See Results' : 'Next Question'}
                     </button>
@@ -164,26 +164,73 @@ const Quiz = () => {
 
             </motion.div>
           ) : (
-            // FINAL RESULTS SCREEN
+            
+            // =========================================================================
+            // FINAL RESULTS SCREEN (UPDATED)
+            // =========================================================================
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="text-center max-w-2xl bg-midnight p-12 md:p-20 shadow-2xl border border-gray-800"
+              className="w-full max-w-3xl bg-[#12141A] p-8 md:p-14 shadow-2xl border border-white/10 rounded-2xl text-left"
             >
-              <h2 className="font-primary text-sm tracking-[0.2em] text-teal uppercase mb-4">Diagnosis Complete</h2>
-              <h3 className="font-primary text-3xl md:text-5xl font-bold text-white mb-6">
-                Ready to strengthen your brand and systems?
-              </h3>
-              <p className="font-secondary text-gray-300 leading-editorial mb-10 font-light">
-                Based on your answers, your business is primed for a digital upgrade. Let’s build the structural foundation and high-end aesthetic your vision truly deserves.
+              <div className="text-center mb-8">
+                <h2 className="font-primary text-xs tracking-[0.2em] text-[#D4AF37] uppercase mb-4">Diagnosis Complete</h2>
+                <p className="font-secondary text-base md:text-lg text-gray-200 leading-relaxed">
+                  Your answers show one thing clearly: your business is growing, but your brand, systems, or digital presence aren’t keeping up. That gap is costing you clarity, capacity, and opportunities.
+                </p>
+              </div>
+
+              {/* Diagnostic Points */}
+              <ul className="space-y-6 mb-10 bg-white/5 p-6 md:p-8 rounded-xl border border-white/5">
+                <li className="flex items-start">
+                  <span className="text-[#008080] mr-4 text-xl">✦</span>
+                  <p className="font-secondary text-sm md:text-base text-gray-300 font-light">
+                    <strong className="text-white font-medium">Brand Clarity</strong> — Your message may not be landing with the people who need you most.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#008080] mr-4 text-xl">✦</span>
+                  <p className="font-secondary text-sm md:text-base text-gray-300 font-light">
+                    <strong className="text-white font-medium">Systems & Structure</strong> — Too much depends on you, creating overwhelm and inconsistency.
+                  </p>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#008080] mr-4 text-xl">✦</span>
+                  <p className="font-secondary text-sm md:text-base text-gray-300 font-light">
+                    <strong className="text-white font-medium">Digital Presence</strong> — Your online identity isn’t fully representing your excellence.
+                  </p>
+                </li>
+              </ul>
+
+              <p className="font-secondary text-gray-300 text-sm md:text-base mb-6 font-light">
+                The good news: every one of these challenges is fixable with the right support.
               </p>
-              <Link 
-                to="/booking"
-                className="inline-block bg-electric text-white font-primary px-10 py-5 tracking-widest uppercase text-sm hover:bg-midnight hover:text-white transition-colors duration-500 w-full"
-              >
-                Book Your Free Clarity Call
-              </Link>
+
+              {/* Highlighted Quote */}
+              <div className="border-l-4 border-[#008080] pl-6 py-2 mb-8 bg-[#008080]/10 rounded-r-lg">
+                <p className="font-primary text-lg md:text-xl text-white font-medium italic">
+                  “Let’s fix what’s slowing you down — and build the business you actually envisioned.”
+                </p>
+              </div>
+
+              <p className="font-secondary text-gray-300 text-sm md:text-base mb-10 font-light">
+                You don’t need more hustle. You need a stronger brand, smarter systems, and a digital presence that works for you. <br/><br/>
+                That’s exactly what <strong className="text-white font-medium">Grand Tech Solutions</strong> delivers.
+              </p>
+
+              {/* Final Call to Action */}
+              <div className="flex flex-col items-center">
+                <Link 
+                  to="/booking"
+                  className="inline-block bg-[#008080] text-white font-primary px-10 py-5 tracking-widest uppercase text-sm hover:bg-white hover:text-[#191970] transition-colors duration-500 w-full text-center rounded-lg shadow-lg"
+                >
+                  Book Your Free Clarity Call
+                </Link>
+                <p className="text-xs text-gray-400 mt-4 font-light text-center">
+                  Let’s strengthen your foundation so you can grow with confidence and ease.
+                </p>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
