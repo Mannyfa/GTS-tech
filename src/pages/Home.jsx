@@ -3,8 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Hero from '../components/layout/Hero.jsx';
-import Footer from '../components/layout/footer.jsx'; 
+import Footer from '../components/layout/Footer.jsx'; 
 import LeadCaptureModal from '../features/LeadCaptureModal.jsx';
+
+import GiftModal from '../components/layout/GiftModal.jsx'; 
 
 // =========================================================================
 // IMAGE IMPORTS (Update these paths with your actual images)
@@ -57,7 +59,23 @@ const staggerContainer = {
 // =========================================================================
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isGiftModalOpen, setIsGiftModalOpen] = useState(false); 
   
+  
+  useEffect(() => {
+    
+    const hasSeenModal = sessionStorage.getItem('gts_gift_modal_seen');
+    
+    if (!hasSeenModal) {
+      const timer = setTimeout(() => {
+        setIsGiftModalOpen(true);
+        sessionStorage.setItem('gts_gift_modal_seen', 'true');
+      }, 3000); 
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   const revealText = {
     hidden: { y: "120%" },
     visible: { y: 0, transition: { duration: 1.2, ease: [0.33, 1, 0.68, 1] } }
@@ -75,7 +93,12 @@ const Home = () => {
     <div className="min-h-screen bg-white dark:bg-[#0B0C10] font-secondary text-[#191970] dark:text-gray-100 selection:bg-[#008080] selection:text-white transition-colors duration-500">
       
       <Hero onOpenModal={() => setIsModalOpen(true)} />
+      
+      {/* Keeping your existing LeadCaptureModal intact */}
       <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      
+      {/* Adding the new auto-triggered GiftModal */}
+      <GiftModal isOpen={isGiftModalOpen} onClose={() => setIsGiftModalOpen(false)} />
 
       {/* SECTION 2 — PROBLEM (Forced Side-by-Side) */}
       <section className="py-24 lg:py-48 px-4 lg:px-24 bg-white dark:bg-[#0B0C10] relative overflow-hidden transition-colors duration-500">
@@ -85,7 +108,7 @@ const Home = () => {
               initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="font-primary text-[10px] lg:text-xs tracking-[0.3em] text-[#008080] uppercase mb-4 lg:mb-6 block font-bold"
             >
-             
+              
             </motion.h2>
             <div className="overflow-hidden mb-4 lg:mb-8">
               <motion.h3 
@@ -149,7 +172,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
               className="font-primary text-xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
             >
-              We Handle the Digital Side—So You Can Focus.
+              We Handle the Digital Side, So You Can Focus on Your Business.
             </motion.h3>
             <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true }} className="space-y-3 lg:space-y-6">
                <motion.p variants={fadeUpVariants} className="text-gray-300 leading-editorial text-[10px] md:text-lg font-light">
@@ -199,14 +222,14 @@ const Home = () => {
           
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="text-center mb-24">
             
-            <h3 className="font-primary text-3xl md:text-5xl font-bold text-[#191970] dark:text-white">Choose the Right Package.</h3>
+            <h3 className="font-primary text-3xl md:text-5xl font-bold text-[#191970] dark:text-white">WHAT CAN WE HELP YOU WITH?</h3>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
             {/* PACKAGE 01 */}
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="bg-white dark:bg-[#151720] p-8 md:p-10 rounded-2xl border border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none hover:shadow-xl dark:hover:border-[#008080]/50 transition-all duration-500 flex flex-col h-full relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#191970] dark:bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"></div>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 font-bold mb-2">Package 01</span>
+              
               <h4 className="font-primary text-2xl font-bold text-[#191970] dark:text-white mb-2">Brand Foundation Kit</h4>
               <p className="text-[#008080] text-sm font-medium mb-8">Graphics Design Only — Essential Starter Kit</p>
               
@@ -231,7 +254,7 @@ const Home = () => {
             {/* PACKAGE 02 */}
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="bg-white dark:bg-[#151720] p-8 md:p-10 rounded-2xl border border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none hover:shadow-xl dark:hover:border-[#008080]/50 transition-all duration-500 flex flex-col h-full relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#191970] dark:bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"></div>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 font-bold mb-2">Package 02</span>
+              
               <h4 className="font-primary text-2xl font-bold text-[#191970] dark:text-white mb-2">Brand Identity Pro Kit</h4>
               <p className="text-[#008080] text-sm font-medium mb-8">Graphics + Full Brand Identity System</p>
               
@@ -256,7 +279,7 @@ const Home = () => {
             {/* PACKAGE 03 */}
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }} className="bg-white dark:bg-[#151720] p-8 md:p-10 rounded-2xl border border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none hover:shadow-xl dark:hover:border-[#008080]/50 transition-all duration-500 flex flex-col h-full relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#191970] dark:bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"></div>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400 font-bold mb-2">Package 03</span>
+              
               <h4 className="font-primary text-2xl font-bold text-[#191970] dark:text-white mb-2">Website Launch Kit</h4>
               <p className="text-[#008080] text-sm font-medium mb-8">Website Only — Modern, Conversion-Ready</p>
               
@@ -278,10 +301,10 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* PACKAGE 04 - FLAGSHIP (Remains unchanged for dark mode to keep emphasis) */}
+            {/* PACKAGE 04 - FLAGSHIP */}
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="bg-[#191970] text-white p-8 md:p-10 rounded-2xl border border-[#191970] shadow-2xl flex flex-col h-full relative overflow-hidden group transform hover:-translate-y-2 transition-transform">
               <div className="absolute top-0 right-0 p-4"><span className="text-2xl">⭐</span></div>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#D4AF37] font-bold mb-2">Flagship Package</span>
+              
               <h4 className="font-primary text-2xl font-bold text-white mb-2">Brand + Website Suite</h4>
               <p className="text-teal-400 text-sm font-medium mb-8">Full Transformation</p>
               

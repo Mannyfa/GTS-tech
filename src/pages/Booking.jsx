@@ -118,7 +118,7 @@ const Booking = () => {
             />
             
             {/* FIXED HEIGHT FOR MOBILE: Changed min-h to h-screen/h-[800px] on mobile */}
-            <div className="flex-1 w-full h-[850px] md:h-[700px] rounded-xl overflow-hidden bg-white dark:bg-white shadow-[0_20px_50px_rgba(25,25,112,0.05)] border border-gray-100 dark:border-none">
+            <div id="calendly" className="flex-1 w-full h-[850px] md:h-[700px] rounded-xl overflow-hidden bg-white dark:bg-white shadow-[0_20px_50px_rgba(25,25,112,0.05)] border border-gray-100 dark:border-none">
               <iframe
                 src="https://calendly.com/kim-grandtech-solutions/30min?hide_event_type_details=1&hide_gdpr_banner=1"
                 width="100%"

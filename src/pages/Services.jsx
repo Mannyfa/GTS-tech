@@ -23,81 +23,89 @@ const PricingGridIllustration = () => {
   );
 };
 
+// Updated Service Kits data structure based on your new packages
 const serviceKits = [
   {
-    id: 'positioning',
-    title: 'Positioning Kit',
-    theme: 'Foundational',
-    accentText: 'text-[#4e3612] dark:text-[#D4AF37]',
-    accentBg: 'bg-[#4e3612] dark:bg-[#D4AF37]',
-    accentBorder: 'border-[#4e3612] dark:border-[#D4AF37]',
+    
+    title: 'Brand Foundation Kit',
+    theme: 'Package 01',
+    accentText: 'text-gray-500 dark:text-gray-400',
+    accentBg: 'bg-[#191970] dark:bg-white',
+    accentBorder: 'border-[#191970] dark:border-white',
     hoverText: 'group-hover:text-white dark:group-hover:text-[#191970]',
-    purpose: 'Brand identity, clarity, and foundational storytelling.',
-    description: 'Establish a commanding digital presence. We craft the visual identity, messaging, and high-end aesthetics that communicate authority before your client even reads a word.',
-    tiers: [
-      {
-        level: 'Standard',
-        features: ['Primary & Secondary Logo', 'Basic Color & Typography', 'Simple Brand Statement', 'Up to 3-Page Website']
-      },
-      {
-        level: 'Professional',
-        features: ['Full Logo Suite & Brand Patterns', 'Expanded Color System', 'Full Brand Story & Pillars', 'Up to 5-Page Custom Website']
-      },
-      {
-        level: 'Executive',
-        features: ['Complete Identity System', 'Comprehensive Brand Strategy', 'Custom Icon Set', 'Up to 10-Page Website with SEO Setup']
-      }
+    purpose: 'Graphics Design Only — Essential Starter Kit',
+    description: 'Perfect for new founders who need basic brand visuals to look credible and professional quickly.',
+    outcome: 'A clean, cohesive visual identity that helps you show up professionally from day one.',
+    features: [
+      'Brand Discovery Session',
+      'Premium Logo Suite (primary, secondary, submark)',
+      'Brand Color System + Typography Pairings',
+      'Mini Visual Identity Guide (PDF)',
+      '5 Social Media Launch Graphics',
+      '3 Caption Templates'
     ]
   },
   {
-    id: 'stability',
-    title: 'Stability & Structure Kit',
-    theme: 'Operational',
-    accentText: 'text-[#191970] dark:text-blue-400',
-    accentBg: 'bg-[#191970] dark:bg-blue-500',
-    accentBorder: 'border-[#191970] dark:border-blue-500',
-    hoverText: 'group-hover:text-white',
-    purpose: 'Operations, tech alignment, and workflow automation.',
-    description: 'Build the foundation. We engineer robust operational workflows, automated client onboarding, and secure web architecture designed to handle scale without founder burnout.',
-    tiers: [
-      {
-        level: 'Standard',
-        features: ['Basic CRM Integration', 'Standard Contact Workflows', 'Client Portal Setup', 'Basic Security Protocols']
-      },
-      {
-        level: 'Professional',
-        features: ['Advanced CRM Automation', 'Automated Client Onboarding', 'Payment Gateway Integration', 'Dynamic Data Filtering']
-      },
-      {
-        level: 'Executive',
-        features: ['Custom API Integrations', 'Full Data Migration', 'Custom Dashboard Architecture', 'Team Technical Training']
-      }
+    
+    title: 'Brand Identity Pro Kit',
+    theme: 'Package 02',
+    accentText: 'text-gray-500 dark:text-gray-400',
+    accentBg: 'bg-[#191970] dark:bg-white',
+    accentBorder: 'border-[#191970] dark:border-white',
+    hoverText: 'group-hover:text-white dark:group-hover:text-[#191970]',
+    purpose: 'Graphics + Full Brand Identity System',
+    description: 'Perfect for founders who need a polished, premium brand identity with strategy, visuals, and messaging.',
+    outcome: 'A fully developed, intentional brand identity designed to attract the right audience.',
+    features: [
+      'Everything in the Brand Foundation Kit',
+      'Full Brand Strategy (voice, tone, positioning)',
+      'Extended Logo System (patterns, icons, brand elements)',
+      'Full Visual Identity Guide (20–25 pages)',
+      '10 Editable Social Media Templates',
+      'Brand Story + About Copywriting',
+      'Launch Day Content Pack'
     ]
   },
   {
-    id: 'growth',
-    title: 'Growth Kit',
-    theme: 'Expansion',
-    accentText: 'text-teal-600 dark:text-teal-400',
-    accentBg: 'bg-teal-500 dark:bg-teal-500',
-    accentBorder: 'border-teal-500 dark:border-teal-500',
-    hoverText: 'group-hover:text-white',
-    purpose: 'Momentum, expansion, and aggressive lead generation.',
-    description: 'Accelerate your impact. Conversion-optimized funnels, advanced SEO, and dynamic user experiences strategically designed to turn passive traffic into highly qualified leads.',
-    tiers: [
-      {
-        level: 'Standard',
-        features: ['Basic Lead Magnet Funnel', 'Standard Email Sequence', 'On-Page SEO Optimization', 'Analytics Integration']
-      },
-      {
-        level: 'Professional',
-        features: ['Multi-Step Sales Funnels', 'Advanced Drip Campaigns', 'Technical SEO Overhaul', 'Conversion Rate Optimization (CRO)']
-      },
-      {
-        level: 'Executive',
-        features: ['Comprehensive Ecosystem Growth', 'Custom Algorithm Targeting', 'A/B Testing Architecture', 'Dedicated Growth Consulting']
-      }
+    
+    title: 'Website Launch Kit',
+    theme: 'Package 03',
+    accentText: 'text-gray-500 dark:text-gray-400',
+    accentBg: 'bg-[#191970] dark:bg-white',
+    accentBorder: 'border-[#191970] dark:border-white',
+    hoverText: 'group-hover:text-white dark:group-hover:text-[#191970]',
+    purpose: 'Website Only — Modern, Conversion-Ready',
+    description: 'Perfect for founders who already have a brand identity and need a professional website that converts.',
+    outcome: 'A clean, modern website designed to showcase your business and turn visitors into clients.',
+    features: [
+      '5-Page Website (Home, About, Services, Contact, +1 Custom Page)',
+      'Conversion-Focused Layout & Strategic Copywriting',
+      'Mobile Optimization',
+      'Basic SEO Setup',
+      'Contact Form + Lead Capture Integration',
+      '1-Hour Website Training Session'
     ]
+  },
+  {
+    
+    title: 'Brand + Website Launch Suite',
+    theme: '⭐ Package 04',
+    accentText: 'text-[#D4AF37] dark:text-[#D4AF37]',
+    accentBg: 'bg-[#D4AF37] dark:bg-[#D4AF37]',
+    accentBorder: 'border-[#D4AF37] dark:border-[#D4AF37]',
+    hoverText: 'group-hover:text-[#191970] dark:group-hover:text-[#191970]',
+    purpose: 'Flagship Package — Full Transformation',
+    description: 'Perfect for founders ready for a complete brand and digital presence transformation.',
+    outcome: 'A complete, elevated brand and digital ecosystem—built for visibility, credibility, and long-term growth.',
+    features: [
+      'Full Brand Identity Pro Kit',
+      'Full Website Launch Kit',
+      '3-Month Content Strategy Outline',
+      '10 Additional Social Media Templates',
+      'Brand Messaging Framework',
+      'Full Website Copywriting'
+    ],
+    isFlagship: true
   }
 ];
 
@@ -163,34 +171,38 @@ const Services = () => {
 
       {/* 2. Service Kit Cards */}
       <section className="py-32 lg:py-48 px-6 lg:px-24 border-t border-gray-100 dark:border-white/5 bg-white dark:bg-[#0B0C10] transition-colors duration-500">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+        {/* Changed grid-cols-3 to grid-cols-2 or 4 to fit 4 packages nicely */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {serviceKits.map((kit, index) => (
             <motion.div 
               key={kit.id}
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
-              variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: index * 0.2 } } }}
-              className="bg-gray-50 dark:bg-[#12141A] p-8 md:p-12 shadow-sm dark:shadow-none border border-gray-200 dark:border-white/5 relative group flex flex-col justify-between rounded-xl hover:shadow-xl dark:hover:border-white/20 transition-all duration-500"
+              variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: index * 0.1 } } }}
+              // Added conditional styling for the flagship package
+              className={`${kit.isFlagship ? 'bg-[#191970] text-white border-[#191970] dark:bg-[#1C1F26] dark:border-white/20' : 'bg-gray-50 dark:bg-[#12141A] text-[#191970] dark:text-white border-gray-200 dark:border-white/5'} p-8 shadow-sm dark:shadow-none border relative group flex flex-col justify-between rounded-xl hover:shadow-xl transition-all duration-500`}
             >
               <div className={`absolute top-0 left-0 w-full h-1 ${kit.accentBg} rounded-t-xl transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
               
               <div>
-                <span className={`text-xs font-primary tracking-[0.2em] uppercase mb-4 block ${kit.accentText}`}>
+                <span className={`text-[10px] font-primary tracking-[0.2em] uppercase mb-4 block ${kit.accentText}`}>
                   {kit.theme}
                 </span>
-                <h3 className="font-primary text-2xl font-bold text-[#191970] dark:text-white mb-4">
+                <h3 className={`font-primary text-2xl font-bold mb-4 ${kit.isFlagship ? 'text-white' : 'text-[#191970] dark:text-white'}`}>
                   {kit.title}
                 </h3>
-                <p className="font-primary text-sm font-semibold text-gray-800 dark:text-gray-300 mb-4">{kit.purpose}</p>
-                <p className="text-gray-600 dark:text-gray-400 leading-editorial text-sm font-light mb-10">
+                <p className={`font-primary text-sm font-semibold mb-4 ${kit.isFlagship ? 'text-teal-400' : 'text-[#008080] dark:text-teal-400'}`}>
+                  {kit.purpose}
+                </p>
+                <p className={`leading-editorial text-sm font-light mb-10 ${kit.isFlagship ? 'text-gray-300' : 'text-gray-600 dark:text-gray-400'}`}>
                   {kit.description}
                 </p>
               </div>
               
               <button 
                 onClick={() => setSelectedKit(kit)}
-                className={`relative overflow-hidden w-full py-4 border border-gray-300 dark:border-gray-700 rounded-lg group-hover:${kit.accentBorder} transition-colors duration-500`}
+                className={`relative overflow-hidden w-full py-4 border rounded-lg group-hover:${kit.accentBorder} transition-colors duration-500 ${kit.isFlagship ? 'border-white/20' : 'border-gray-300 dark:border-gray-700'}`}
               >
-                <span className={`relative z-10 font-primary text-xs uppercase tracking-widest text-[#191970] dark:text-white ${kit.hoverText} transition-colors duration-300`}>
+                <span className={`relative z-10 font-primary text-xs uppercase tracking-widest transition-colors duration-300 ${kit.isFlagship ? 'text-white' : 'text-[#191970] dark:text-white'} ${kit.hoverText}`}>
                   View Deliverables
                 </span>
                 <div className={`absolute inset-0 ${kit.accentBg} translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.33,1,0.68,1] z-0`}></div>
@@ -204,7 +216,7 @@ const Services = () => {
       <section className="py-32 lg:py-48 px-6 bg-white dark:bg-[#0B0C10] text-center relative overflow-hidden border-t border-gray-100 dark:border-white/5 transition-colors duration-500">
         <div className="max-w-3xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <h2 className="font-primary text-sm tracking-[0.2em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-4"></h2>
+            <h2 className="font-primary text-sm tracking-[0.2em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-4">Diagnostic Tool</h2>
             <h3 className="font-primary text-3xl md:text-5xl font-bold mb-6 text-[#191970] dark:text-white">Not sure where to start?</h3>
             <p className="font-secondary text-base md:text-lg leading-editorial text-gray-600 dark:text-gray-400 mb-10 font-light max-w-2xl mx-auto">
               Take our 2-minute Discovery Quiz. We'll analyze your current brand infrastructure and recommend the exact systems you need to scale efficiently.
@@ -244,7 +256,7 @@ const Services = () => {
           >
             <motion.div 
               initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }} transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-              className="bg-white dark:bg-[#12141A] w-full max-w-5xl max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl rounded-t-2xl md:rounded-2xl transition-colors duration-500"
+              className="bg-white dark:bg-[#12141A] w-full max-w-3xl max-h-[90vh] overflow-y-auto flex flex-col shadow-2xl rounded-t-2xl md:rounded-2xl transition-colors duration-500"
             >
               {/* Modal Header */}
               <div className="sticky top-0 bg-white/95 dark:bg-[#12141A]/95 backdrop-blur-md z-20 flex justify-between items-center p-8 md:p-10 border-b border-gray-200 dark:border-white/10 transition-colors duration-500">
@@ -262,23 +274,26 @@ const Services = () => {
                 </button>
               </div>
 
-              {/* Modal Content - Tiers Grid */}
-              <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-100 dark:border-white/5">
-                {selectedKit.tiers.map((tier, idx) => (
-                  <div key={idx} className="flex flex-col bg-gray-50 dark:bg-[#1C1F26] p-6 rounded-xl border border-gray-100 dark:border-white/5 transition-colors duration-500">
-                    <h4 className="font-primary text-lg font-bold text-[#191970] dark:text-white mb-6 pb-4 border-b border-gray-200 dark:border-white/10">
-                      {tier.level} Level
-                    </h4>
-                    <ul className="space-y-4 flex-1">
-                      {tier.features.map((feature, i) => (
-                        <li key={i} className="flex items-start font-secondary text-sm text-gray-700 dark:text-gray-300 font-light leading-relaxed">
-                          <span className={`mr-3 ${selectedKit.accentText}`}>✦</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+              {/* Modal Content - Single List Instead of Tiers */}
+              <div className="p-8 md:p-10 border-b border-gray-100 dark:border-white/5">
+                <div className="flex flex-col bg-gray-50 dark:bg-[#1C1F26] p-8 rounded-xl border border-gray-100 dark:border-white/5 transition-colors duration-500">
+                  <h4 className="font-primary text-xl font-bold text-[#191970] dark:text-white mb-6 pb-4 border-b border-gray-200 dark:border-white/10">
+                    What's Included
+                  </h4>
+                  <ul className="space-y-5">
+                    {selectedKit.features.map((feature, i) => (
+                      <li key={i} className="flex items-start font-secondary text-base text-gray-700 dark:text-gray-300 font-light leading-relaxed">
+                        <span className={`mr-4 text-xl ${selectedKit.accentText}`}>✦</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="mt-10 pt-6 border-t border-gray-200 dark:border-white/10">
+                    <h5 className="font-primary text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400 mb-2">Outcome</h5>
+                    <p className="text-gray-800 dark:text-gray-200 italic font-light">{selectedKit.outcome}</p>
                   </div>
-                ))}
+                </div>
               </div>
 
               {/* Modal Footer */}

@@ -35,9 +35,9 @@ const About = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    const serviceID = 'YOUR_SERVICE_ID';
-    const templateID = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
+    const serviceID = 'service_3p894ok';
+    const templateID = 'template_n9cgx4q';
+    const publicKey = 'e8NKqPBQPIh-fciZL';
 
     emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)
       .then((result) => {

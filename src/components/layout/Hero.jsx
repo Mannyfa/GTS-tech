@@ -1,6 +1,7 @@
 // src/components/layout/Hero.jsx
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom'; // IMPORT LINK HERE
 import heroBg from '../../assets/images/hero-bg.jpg'; 
 
 const Hero = ({ onOpenModal }) => {
@@ -37,7 +38,6 @@ const Hero = ({ onOpenModal }) => {
       />
       
       {/* Cinematic Gradient Overlay */}
-      {/* Adjusted the gradient to be a solid white/dark overlay to match the Home page aesthetic */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 dark:from-[#0B0C10]/95 dark:via-[#0B0C10]/80 to-transparent z-10 pointer-events-none transition-colors duration-500"></div>
       <div className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none bg-noise mix-blend-overlay"></div>
       
@@ -66,9 +66,14 @@ const Hero = ({ onOpenModal }) => {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6"
         >
-          <button className="bg-[#008080] dark:bg-teal-500 text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#191970] dark:hover:bg-white dark:hover:text-[#191970] transition-colors duration-500">
+          {/* CHANGED FROM <button> TO <Link> */}
+          <Link 
+            to="/booking#calendly"
+            className="bg-[#008080] dark:bg-teal-500 text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#191970] dark:hover:bg-white dark:hover:text-[#191970] transition-colors duration-500 text-center"
+          >
             Schedule Discovery
-          </button>
+          </Link>
+          
           <button 
             onClick={onOpenModal}
             className="border border-[#191970] dark:border-white text-[#191970] dark:text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#008080] dark:hover:bg-teal-500 hover:border-[#008080] dark:hover:border-teal-500 hover:text-white dark:hover:text-white transition-colors duration-500"
