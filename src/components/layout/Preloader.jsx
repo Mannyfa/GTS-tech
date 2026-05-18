@@ -14,7 +14,8 @@ const Preloader = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-20 md:w-28 mb-4 flex justify-center"
+        
+        className="w-36 md:w-52 mb-6 flex justify-center"
       >
         <img 
           src={logoImg} 
@@ -26,14 +27,14 @@ const Preloader = () => {
       {/* 2. Typewriter Text: "GRAND TECH SOLUTIONS" */}
       <div className="flex justify-center">
         <motion.div
-          // Width goes from 0 to 100% (typing), pauses, then goes back to 0% (wiping out)
+          
           animate={{ width: ["0%", "100%", "100%", "0%"] }}
           transition={{
-            duration: 4, // Total 4 seconds for the whole sequence
-            times: [0, 0.25, 0.8, 1], // Controls when it stops and starts within the 4 seconds
+            duration: 4, 
+            times: [0, 0.25, 0.8, 1], 
             ease: "easeInOut"
           }}
-          // The right border acts as the blinking cursor
+          
           className="overflow-hidden whitespace-nowrap border-r-[3px] border-[#D4AF37] pr-1"
         >
           <h1 className="text-white font-primary font-bold text-lg md:text-2xl tracking-[0.15em] uppercase pl-1">
@@ -44,7 +45,6 @@ const Preloader = () => {
 
       {/* 3. Subtitles: "CLARITY EXCELLENCE CONFIDENCE" */}
       <motion.div
-         
          animate={{ opacity: [0, 0, 1, 1, 0] }}
          transition={{
             duration: 4,
