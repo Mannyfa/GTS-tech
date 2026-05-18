@@ -216,6 +216,52 @@ const Home = () => {
         </div>
       </section>
 
+
+      {/* SECTION 7 — OUR PROCESS (Forced Side-by-Side) */}
+      <section className="py-24 lg:py-48 px-4 lg:px-24 bg-gray-50 dark:bg-[#12141A] border-t border-gray-200 dark:border-white/5 transition-colors duration-500">
+        <div className="max-w-7xl mx-auto flex flex-row gap-4 lg:gap-24 items-center">
+          
+          <div className="w-[40%] grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 relative">
+             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="rounded-xl lg:rounded-2xl overflow-hidden shadow-lg dark:shadow-none border dark:border-white/10 h-32 md:h-80 hidden lg:block lg:mt-12">
+                <img src={processImg1} alt="Design process" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+             </motion.div>
+             <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="rounded-xl lg:rounded-2xl overflow-hidden shadow-lg dark:shadow-none border dark:border-white/10 h-40 md:h-80">
+                <img src={processImg2} alt="Strategy meeting" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+             </motion.div>
+          </div>
+
+          <div className="w-[60%] flex flex-col space-y-6 lg:space-y-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}>
+              
+              <h3 className="font-primary text-xl md:text-5xl font-bold text-[#191970] dark:text-white">How It Works.</h3>
+            </motion.div>
+
+            <div className="space-y-4 lg:space-y-8 relative before:absolute before:inset-0 before:ml-3 lg:before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 dark:before:via-gray-800 before:to-transparent">
+              {[
+                { step: '01', title: 'Discovery', desc: 'We learn about your business.' },
+                { step: '02', title: 'Design', desc: 'We build your digital assets.' },
+                { step: '03', title: 'Launch', desc: 'We prepare you to go live.' },
+                { step: '04', title: 'Support', desc: 'We help you continue growing.', optional: true }
+              ].map((item, index) => (
+                <motion.div key={index} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                   <div className="flex items-center justify-center w-6 h-6 lg:w-10 lg:h-10 rounded-full border border-white dark:border-[#0B0C10] bg-[#008080] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-primary text-[10px] lg:text-sm font-bold z-10 transition-colors">
+                     {item.step}
+                   </div>
+                   <div className="w-[calc(100%-2rem)] md:w-[calc(50%-2.5rem)] p-3 lg:p-6 rounded-lg lg:rounded-xl border border-gray-100 dark:border-white/5 bg-white dark:bg-[#1C1F26] shadow-sm dark:shadow-none transition-all duration-300 group-hover:-translate-y-1">
+                     <h4 className="font-primary font-bold text-[#191970] dark:text-white text-xs lg:text-base mb-1 flex items-center gap-1 lg:gap-2">
+                       {item.title} 
+                       {item.optional && <span className="text-[7px] lg:text-[9px] uppercase tracking-widest text-gray-400 font-light border border-gray-200 dark:border-gray-700 px-1 py-0.5 rounded-full">Opt</span>}
+                     </h4>
+                     <p className="text-[10px] lg:text-sm text-gray-600 dark:text-gray-400 font-light">{item.desc}</p>
+                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* SECTION 5 — PACKAGES */}
       <section className="py-32 lg:py-48 px-6 lg:px-24 bg-white dark:bg-[#0B0C10] relative transition-colors duration-500">
         <div className="max-w-7xl mx-auto">
@@ -226,6 +272,32 @@ const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+
+            {/* PACKAGE 04 - FLAGSHIP */}
+            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="bg-[#191970] text-white p-8 md:p-10 rounded-2xl border border-[#191970] shadow-2xl flex flex-col h-full relative overflow-hidden group transform hover:-translate-y-2 transition-transform">
+              <div className="absolute top-0 right-0 p-4"><span className="text-2xl">⭐</span></div>
+              
+              <h4 className="font-primary text-2xl font-bold text-white mb-2">Brand + Website Suite</h4>
+              <p className="text-teal-400 text-sm font-medium mb-8">Full Transformation</p>
+              
+              <div className="mb-8 flex-grow">
+                <p className="text-sm font-bold text-white mb-3 uppercase tracking-wider">Perfect For:</p>
+                <p className="text-sm text-gray-300 leading-relaxed mb-6 font-light">Founders ready for a complete brand and digital presence transformation.</p>
+                
+                <p className="text-sm font-bold text-white mb-3 uppercase tracking-wider">What's Included:</p>
+                <ul className="space-y-3 mb-6">
+                  {['Full Brand Identity Pro Kit', 'Full Website Launch Kit', '3-Month Content Strategy', '10 Extra Social Templates', 'Brand Messaging Framework', 'Full Website Copywriting'].map((item, i) => (
+                    <li key={i} className="flex items-start text-sm text-gray-300 font-light"><span className="text-teal-400 mr-3">✓</span> {item}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg mt-auto border border-white/20">
+                <p className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider mb-1">Outcome:</p>
+                <p className="text-sm text-white font-light">A complete, elevated brand and digital ecosystem—built for visibility, credibility, and long-term growth.</p>
+              </div>
+            </motion.div>
+
             {/* PACKAGE 01 */}
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="bg-white dark:bg-[#151720] p-8 md:p-10 rounded-2xl border border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none hover:shadow-xl dark:hover:border-[#008080]/50 transition-all duration-500 flex flex-col h-full relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-[#191970] dark:bg-white scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500"></div>
@@ -301,30 +373,7 @@ const Home = () => {
               </div>
             </motion.div>
 
-            {/* PACKAGE 04 - FLAGSHIP */}
-            <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="bg-[#191970] text-white p-8 md:p-10 rounded-2xl border border-[#191970] shadow-2xl flex flex-col h-full relative overflow-hidden group transform hover:-translate-y-2 transition-transform">
-              <div className="absolute top-0 right-0 p-4"><span className="text-2xl">⭐</span></div>
-              
-              <h4 className="font-primary text-2xl font-bold text-white mb-2">Brand + Website Suite</h4>
-              <p className="text-teal-400 text-sm font-medium mb-8">Full Transformation</p>
-              
-              <div className="mb-8 flex-grow">
-                <p className="text-sm font-bold text-white mb-3 uppercase tracking-wider">Perfect For:</p>
-                <p className="text-sm text-gray-300 leading-relaxed mb-6 font-light">Founders ready for a complete brand and digital presence transformation.</p>
-                
-                <p className="text-sm font-bold text-white mb-3 uppercase tracking-wider">What's Included:</p>
-                <ul className="space-y-3 mb-6">
-                  {['Full Brand Identity Pro Kit', 'Full Website Launch Kit', '3-Month Content Strategy', '10 Extra Social Templates', 'Brand Messaging Framework', 'Full Website Copywriting'].map((item, i) => (
-                    <li key={i} className="flex items-start text-sm text-gray-300 font-light"><span className="text-teal-400 mr-3">✓</span> {item}</li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg mt-auto border border-white/20">
-                <p className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider mb-1">Outcome:</p>
-                <p className="text-sm text-white font-light">A complete, elevated brand and digital ecosystem—built for visibility, credibility, and long-term growth.</p>
-              </div>
-            </motion.div>
+            
           </div>
 
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center bg-gray-50 dark:bg-[#151720] p-8 rounded-xl border border-gray-200 dark:border-white/10 transition-colors duration-500">
@@ -337,50 +386,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 7 — OUR PROCESS (Forced Side-by-Side) */}
-      <section className="py-24 lg:py-48 px-4 lg:px-24 bg-gray-50 dark:bg-[#12141A] border-t border-gray-200 dark:border-white/5 transition-colors duration-500">
-        <div className="max-w-7xl mx-auto flex flex-row gap-4 lg:gap-24 items-center">
-          
-          <div className="w-[40%] grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 relative">
-             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="rounded-xl lg:rounded-2xl overflow-hidden shadow-lg dark:shadow-none border dark:border-white/10 h-32 md:h-80 hidden lg:block lg:mt-12">
-                <img src={processImg1} alt="Design process" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-             </motion.div>
-             <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="rounded-xl lg:rounded-2xl overflow-hidden shadow-lg dark:shadow-none border dark:border-white/10 h-40 md:h-80">
-                <img src={processImg2} alt="Strategy meeting" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-             </motion.div>
-          </div>
-
-          <div className="w-[60%] flex flex-col space-y-6 lg:space-y-10">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}>
-              
-              <h3 className="font-primary text-xl md:text-5xl font-bold text-[#191970] dark:text-white">How It Works.</h3>
-            </motion.div>
-
-            <div className="space-y-4 lg:space-y-8 relative before:absolute before:inset-0 before:ml-3 lg:before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 dark:before:via-gray-800 before:to-transparent">
-              {[
-                { step: '01', title: 'Discovery', desc: 'We learn about your business.' },
-                { step: '02', title: 'Design', desc: 'We build your digital assets.' },
-                { step: '03', title: 'Launch', desc: 'We prepare you to go live.' },
-                { step: '04', title: 'Support', desc: 'We help you continue growing.', optional: true }
-              ].map((item, index) => (
-                <motion.div key={index} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                   <div className="flex items-center justify-center w-6 h-6 lg:w-10 lg:h-10 rounded-full border border-white dark:border-[#0B0C10] bg-[#008080] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-primary text-[10px] lg:text-sm font-bold z-10 transition-colors">
-                     {item.step}
-                   </div>
-                   <div className="w-[calc(100%-2rem)] md:w-[calc(50%-2.5rem)] p-3 lg:p-6 rounded-lg lg:rounded-xl border border-gray-100 dark:border-white/5 bg-white dark:bg-[#1C1F26] shadow-sm dark:shadow-none transition-all duration-300 group-hover:-translate-y-1">
-                     <h4 className="font-primary font-bold text-[#191970] dark:text-white text-xs lg:text-base mb-1 flex items-center gap-1 lg:gap-2">
-                       {item.title} 
-                       {item.optional && <span className="text-[7px] lg:text-[9px] uppercase tracking-widest text-gray-400 font-light border border-gray-200 dark:border-gray-700 px-1 py-0.5 rounded-full">Opt</span>}
-                     </h4>
-                     <p className="text-[10px] lg:text-sm text-gray-600 dark:text-gray-400 font-light">{item.desc}</p>
-                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </section>
+      
 
       {/* SECTION 8 — RESULTS & SECTION 9 — FINAL CTA */}
       <section ref={ctaRef} className="relative py-32 lg:py-48 px-6 lg:px-24 overflow-hidden min-h-screen flex items-center">
