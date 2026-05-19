@@ -168,7 +168,7 @@ const About = () => {
           {/* Left Text Side */}
           <div className="lg:w-1/2">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants} className="mb-12">
-              <h2 className="font-primary text-xs tracking-[0.3em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-4">The Standard</h2>
+              
               <h3 className="font-primary text-3xl md:text-4xl font-bold text-[#191970] dark:text-white">Our Core Values</h3>
             </motion.div>
 
