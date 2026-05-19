@@ -1,4 +1,4 @@
-// src/features/LeadCaptureModal.jsx
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -34,7 +34,7 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
             <h3 className="font-primary text-2xl font-bold mb-2 text-white tracking-wide">
               Top 10 Website Secrets
             </h3>
-            <p className="font-secondary text-sm text-gray-600 mb-8 leading-editorial">
+            <p className="font-secondary text-sm text-gray-400 mb-8 leading-editorial">
               Enter your details to get your free report and join our exclusive mailing list.
             </p>
             
@@ -43,7 +43,8 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
                 <input 
                   type="text" 
                   placeholder="Full Name" 
-                  className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric font-secondary bg-transparent transition-colors peer" 
+                  // ADDED: text-white and placeholder-gray-400
+                  className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric font-secondary bg-transparent transition-colors peer text-white placeholder-gray-400" 
                   required 
                 />
               </div>
@@ -51,13 +52,14 @@ const LeadCaptureModal = ({ isOpen, onClose }) => {
                 <input 
                   type="email" 
                   placeholder="Email Address" 
-                  className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric font-secondary bg-transparent transition-colors peer" 
+                  // ADDED: text-white and placeholder-gray-400
+                  className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-electric font-secondary bg-transparent transition-colors peer text-white placeholder-gray-400" 
                   required 
                 />
               </div>
               <button 
                 type="submit"
-                className="bg-midnight text-white font-primary py-4 mt-4 hover:bg-electric transition-colors duration-300 tracking-widest text-sm uppercase"
+                className="bg-[#191970] text-white border border-[#191970] font-primary py-4 mt-4 hover:bg-electric hover:border-electric transition-colors duration-300 tracking-widest text-sm uppercase"
               >
                 Send My Report
               </button>

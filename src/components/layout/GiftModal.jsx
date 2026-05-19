@@ -15,7 +15,7 @@ const GiftModal = ({ isOpen, onClose }) => {
 
     // Make sure to use the same EmailJS credentials you used in About.jsx
     const serviceID = 'service_3p894ok'; 
-    const templateID = 'template_n9cgx4q'; 
+    const templateID = 'template_t8eqp9d'; 
     const publicKey = 'e8NKqPBQPIh-fciZL';
 
     emailjs.sendForm(serviceID, templateID, formRef.current, publicKey)

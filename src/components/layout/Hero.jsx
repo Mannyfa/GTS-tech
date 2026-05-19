@@ -78,7 +78,7 @@ const Hero = ({ onOpenModal }) => {
             onClick={onOpenModal}
             className="border border-[#191970] dark:border-white text-[#191970] dark:text-white font-primary px-8 py-4 rounded-sm tracking-widest text-xs uppercase hover:bg-[#008080] dark:hover:bg-teal-500 hover:border-[#008080] dark:hover:border-teal-500 hover:text-white dark:hover:text-white transition-colors duration-500"
           >
-            Free Strategy Report
+            Get Free Gift
           </button>
         </motion.div>
       </motion.div>

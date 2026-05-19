@@ -25,10 +25,34 @@ const PricingGridIllustration = () => {
 
 // Updated Service Kits data structure based on your new packages
 const serviceKits = [
+
+
+  {
+    
+    title: 'Brand + Website Launch Suite',
+    
+    accentText: 'text-[#D4AF37] dark:text-[#D4AF37]',
+    accentBg: 'bg-[#D4AF37] dark:bg-[#D4AF37]',
+    accentBorder: 'border-[#D4AF37] dark:border-[#D4AF37]',
+    hoverText: 'group-hover:text-[#191970] dark:group-hover:text-[#191970]',
+    purpose: 'Flagship Package — Full Transformation',
+    description: 'Perfect for founders ready for a complete brand and digital presence transformation.',
+    outcome: 'A complete, elevated brand and digital ecosystem—built for visibility, credibility, and long-term growth.',
+    features: [
+      'Full Brand Identity Pro Kit',
+      'Full Website Launch Kit',
+      '3-Month Content Strategy Outline',
+      '10 Additional Social Media Templates',
+      'Brand Messaging Framework',
+      'Full Website Copywriting'
+    ],
+    isFlagship: true
+  },
+  
   {
     
     title: 'Brand Foundation Kit',
-    theme: 'Package 01',
+    
     accentText: 'text-gray-500 dark:text-gray-400',
     accentBg: 'bg-[#191970] dark:bg-white',
     accentBorder: 'border-[#191970] dark:border-white',
@@ -48,7 +72,7 @@ const serviceKits = [
   {
     
     title: 'Brand Identity Pro Kit',
-    theme: 'Package 02',
+    
     accentText: 'text-gray-500 dark:text-gray-400',
     accentBg: 'bg-[#191970] dark:bg-white',
     accentBorder: 'border-[#191970] dark:border-white',
@@ -69,7 +93,7 @@ const serviceKits = [
   {
     
     title: 'Website Launch Kit',
-    theme: 'Package 03',
+    
     accentText: 'text-gray-500 dark:text-gray-400',
     accentBg: 'bg-[#191970] dark:bg-white',
     accentBorder: 'border-[#191970] dark:border-white',
@@ -86,27 +110,7 @@ const serviceKits = [
       '1-Hour Website Training Session'
     ]
   },
-  {
-    
-    title: 'Brand + Website Launch Suite',
-    theme: '⭐ Package 04',
-    accentText: 'text-[#D4AF37] dark:text-[#D4AF37]',
-    accentBg: 'bg-[#D4AF37] dark:bg-[#D4AF37]',
-    accentBorder: 'border-[#D4AF37] dark:border-[#D4AF37]',
-    hoverText: 'group-hover:text-[#191970] dark:group-hover:text-[#191970]',
-    purpose: 'Flagship Package — Full Transformation',
-    description: 'Perfect for founders ready for a complete brand and digital presence transformation.',
-    outcome: 'A complete, elevated brand and digital ecosystem—built for visibility, credibility, and long-term growth.',
-    features: [
-      'Full Brand Identity Pro Kit',
-      'Full Website Launch Kit',
-      '3-Month Content Strategy Outline',
-      '10 Additional Social Media Templates',
-      'Brand Messaging Framework',
-      'Full Website Copywriting'
-    ],
-    isFlagship: true
-  }
+  
 ];
 
 const Services = () => {
@@ -178,7 +182,7 @@ const Services = () => {
               key={kit.id}
               initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
               variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: index * 0.1 } } }}
-              // Added conditional styling for the flagship package
+              
               className={`${kit.isFlagship ? 'bg-[#191970] text-white border-[#191970] dark:bg-[#1C1F26] dark:border-white/20' : 'bg-gray-50 dark:bg-[#12141A] text-[#191970] dark:text-white border-gray-200 dark:border-white/5'} p-8 shadow-sm dark:shadow-none border relative group flex flex-col justify-between rounded-xl hover:shadow-xl transition-all duration-500`}
             >
               <div className={`absolute top-0 left-0 w-full h-1 ${kit.accentBg} rounded-t-xl transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
