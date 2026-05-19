@@ -1,7 +1,7 @@
 // src/pages/Portfolio.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Footer from '../components/layout/Footer.jsx';
+import Footer from '../components/layout/footer.jsx';
 import { client, urlFor } from '../client.js';
 
 import portfolioHeroImg from '../assets/images/portfolioimg.jpg'; 
