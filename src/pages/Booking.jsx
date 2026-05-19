@@ -39,7 +39,7 @@ const Booking = () => {
               initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
               className="font-primary text-xs tracking-[0.3em] text-[#191970] dark:text-[#D4AF37] uppercase mb-6 block font-semibold"
             >
-              Consultation
+            
             </motion.h2>
             
             <div className="overflow-hidden mb-8">

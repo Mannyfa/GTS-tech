@@ -216,7 +216,7 @@ const Services = () => {
       <section className="py-32 lg:py-48 px-6 bg-white dark:bg-[#0B0C10] text-center relative overflow-hidden border-t border-gray-100 dark:border-white/5 transition-colors duration-500">
         <div className="max-w-3xl mx-auto relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <h2 className="font-primary text-sm tracking-[0.2em] text-[#4e3612] dark:text-[#D4AF37] uppercase mb-4">Diagnostic Tool</h2>
+            
             <h3 className="font-primary text-3xl md:text-5xl font-bold mb-6 text-[#191970] dark:text-white">Not sure where to start?</h3>
             <p className="font-secondary text-base md:text-lg leading-editorial text-gray-600 dark:text-gray-400 mb-10 font-light max-w-2xl mx-auto">
               Take our 2-minute Discovery Quiz. We'll analyze your current brand infrastructure and recommend the exact systems you need to scale efficiently.
